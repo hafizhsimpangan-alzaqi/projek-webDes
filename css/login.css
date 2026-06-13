@@ -1,0 +1,119 @@
+:root{
+    --warna-utama:#1A56DB;
+    --warna-kedua:#FFFFFF;
+    --warna-bg:#EAEAEA;
+    --shadow-utama:1px 1px 13px rgba(0, 0, 0, 0.3);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: safe center;
+    align-items: center;
+    background: var(--warna-bg);
+}
+
+.card{
+    width: 568px;
+    height: 762px;
+    background-color: var(--warna-kedua);
+    border-radius: 40px;
+    box-shadow: var(--shadow-utama);
+    padding: 2.3rem;
+}
+
+.img{
+    display: flex;
+    justify-content: safe center;
+    align-items: center;
+    margin-top: 73px; /* bisa di sesuaikan */
+    margin-bottom: 27px; /* bisa di sesuaikan */
+}
+
+.img img{
+    width: 112px;
+}
+
+fieldset{
+    margin-top: 38px;
+}
+
+fieldset input{
+    padding: 20px;
+}
+
+.card form button{
+    margin-top: 38px;
+}
+
+/* tampilan responsif untuk mobile tablet 1024px */
+@media (max-width: 1024px) {
+    .card{
+        width: 538px;
+        height: 694px;
+    }
+    .img{
+        margin-top: 78px;
+        margin-bottom: 21px;
+    }
+    .img img{
+        width: 87px;
+    }
+    fieldset{
+        margin-top: 30px;
+        font-size: 14px;
+    }
+    fieldset input{
+        height: 49px;
+        font-size: 14px;
+    }
+    fieldset legend{
+        font-size: 14px;
+    }
+    .card form button{
+        margin-top: 34px;
+        height: 49px;
+        font-size: 14px;
+    }
+}
+
+/* tampilan responsif untuk mobile 425px */
+@media (max-width: 425px) {
+    .card{
+        width: 362px;
+        height: 480px;
+        margin: 20px;
+    }
+    .img{
+        margin-top: 34px;
+        margin-bottom: 16px;
+    }
+    .img img{
+        width: 71px;
+    }
+    fieldset{
+        margin-top: 21px;
+        font-size: 14px;
+    }
+    fieldset input{
+        height: 34px;
+        font-size: 14px;
+    }
+    fieldset legend{
+        font-size: 14px;
+    }
+    .card form button{
+        margin-top: 23px;
+        height: 34px;
+        font-size: 14px;
+    }
+}

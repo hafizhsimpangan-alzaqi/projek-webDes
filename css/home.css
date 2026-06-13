@@ -1,0 +1,520 @@
+:root{
+    --warna-primer: #1A56DB;
+    --warna-hover: #C6E7FF;
+    --warna-bg: #EAEAEA;
+    --warna-sidebar: #FFFFFF;
+    --tugas-tidak-aman-bg: #FFE0E0;
+    --tugas-tidak-aman:#D92D20;
+    --tugas-aman-bg: #DFF7E3;
+    --tugas-aman:#009966;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body{
+    /*agar tidak ada scroll secara grobal*/
+    min-height: 100vh;
+    overflow: hidden; 
+
+    display: grid;
+    font-family: sans-serif;
+    grid-template-columns: 422px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar main";
+    grid-template-rows: 1fr;
+    background-color: var(--warna-bg);
+}
+
+/*==== Menghilangkan Navbar atas ===*/
+nav{
+    display: none;
+}
+
+/*==== desain Sidebar ===*/
+aside{
+    top: 0; /*agar tetap berada diatas */
+    position: sticky;
+    grid-area: sidebar;
+    background-color: var(--warna-sidebar);
+    height: 100vh; /* Memastikan sidebar desktop juga setinggi viewport */
+}
+
+.img img{
+    width: 78px;
+}
+
+.sidebar ul li:first-child{
+    display: none;
+}
+
+aside hr{
+    height: 2px;
+    margin: 0 1.2rem 0 1.2rem; /* Atas: 10px Kanan: 20px Bawah: 30px Kiri: 40px */
+}
+.sidebar{
+    padding: 1.2rem;
+}
+.sidebar ul{
+    list-style-type: none;
+    cursor: pointer;
+}
+.sidebar ul li a{
+    display: flex;
+    height: 74px;
+    justify-content: safe start;
+    align-items: center;
+    padding: 24px;
+    text-decoration: none;
+    column-gap: 1rem;
+    color: black;
+    font-size: 22px;
+    font-weight: 600;
+}
+.sidebar ul :hover{
+    background-color: var(--warna-hover);
+    border-radius: 0 50px 50px 0; /*0 pojok kiri atas 50 pojok kanan atas 50 pojok kanan bawah 0 pojok kiri bawah */
+    color: var(--warna-primer);
+}
+
+/* === TEMPLATE JIKA HALAMAN AKTIF === */
+.sidebar ul .aktif{
+    color: var(--warna-primer);
+    background-color: var(--warna-hover);
+    border-radius: 0 50px 50px 0; /*0 pojok kiri atas 50 pojok kanan atas 50 pojok kanan bawah 0 pojok kiri bawah */
+    color: var(--warna-primer);
+}
+
+/*==== desain main ===*/
+main{
+    padding: 2rem;
+    grid-area: main;
+
+    /*agar scroll aktif hanya di bagian ini*/
+    height: 100vh;
+    overflow-y: auto;
+}
+
+
+.container-1{
+    display: grid;
+    grid-template-columns: 529px 1fr;
+    column-gap: 1.6rem;
+    align-items: start; /* berfungsi mencegah tinggi card task ditarik paksa menyamai profile card oleh grid */
+}
+
+.card-heading {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
+    padding: 0 0 34px 0;
+}
+
+.profile-card{
+    width: 100%;
+    height: 296px;
+    background-color: var(--warna-primer);
+    border-radius: 24px;
+    color: var(--warna-sidebar);
+}
+
+.profile-card h2{
+    padding: 1.2rem;
+}
+
+.profile-card hr{
+    height: 2px;
+    margin: 1.3rem 1.2rem 0.3rem 1.2rem;
+}
+
+.identity{
+    display: flex;
+    padding: 0 1.2rem 0 1.2rem;
+}
+
+.identity img{
+    width: 148px;
+    border-radius: 8px;
+}
+
+.identity-detail{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding: 0.6rem 1.2rem 0.8rem 1.9rem;
+    justify-content: space-between;
+}
+
+.task{
+    width: 100%;
+    height: 296px;
+    background: var(--warna-sidebar);
+    border-radius: 24px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-view::-webkit-scrollbar{
+    display: none;
+    width: 0 !important; /* lebar batang diset ke nol*/
+    height: 0 !important;
+}
+
+.task-view {
+    max-height: 250px;
+    overflow-y: auto;
+    --webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.task-view ul{
+    list-style-type: none;
+}
+
+.task-view ul li a{
+    display: flex;
+    width: 100%;
+    height: 68px;
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 0.7rem 0 0.7rem 0;
+    align-items: center;
+    text-decoration: none;
+    column-gap: 20px;
+}
+.task-view ul li a i{
+    font-size: 40px;
+}
+/* TUGAS TIDAK AMAN */
+.task-view .usafe{
+    background-color: var(--tugas-tidak-aman-bg);
+    color: var(--tugas-tidak-aman);
+}
+/* TUGAS AMAN */
+.task-view .safe{
+    color: var(--tugas-aman);
+    background-color: var(--tugas-aman-bg);
+}
+
+/* === CARD COURSES === */
+.title{
+    padding: 1.5rem 0 1.2rem 0;
+}
+.courses-view{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /*agar mengulang 3x*/
+    gap: 1rem;
+}
+.course-cards{
+    width: 100%;
+    height: 395px;
+    background-color: var(--warna-sidebar);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.course-cards img{
+    width: 100%;
+    height: 183px; 
+    object-fit: cover;
+    object-position: center; /* agar gambar tetap di tengah sesuai cover*/
+    flex-shrink: 0; /*Mencegah gambar menyusut akibat tekanan elemen text flex-item di bawahnya*/
+    border-radius: 16px; /*mendistribusikan elemen secara merata di ujung atas, tengah, dan bawah.*/
+}
+
+.detail-course{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+    padding: 1rem 1.2rem 1.4rem 1.2rem;
+}
+.detail-course .judul h3{
+    font-size: 24px;
+}
+.detail-course .judul p{
+    font-size: 14px;
+}
+/* ======================== */
+/* ===== PROGRESS BAR ===== */
+/* ======================== */
+.progres {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px; /* Memberikan jarak vertikal antara teks informasi dan batang progress */
+}
+
+/* Logika Pemisahan Teks Atas (Kiri & Kanan) */
+.progres-info {
+    display: flex;
+    justify-content: space-between; /* FUNGSI KUNCI: Memaksa teks 'Capacity' ke kiri dan 'left' ke kanan secara otomatis */
+    align-items: center;
+}
+
+.progres-info span {
+    font-size: 0.68rem;
+    color: #6b7280; /* Warna abu-abu soft khas teks sub-informasi */
+    font-weight: 500;
+}
+
+/*Jalur Batang Progress (Latar Belakang Abu-Abu)*/
+.progres-bar-bg {
+    width: 100%; /* Menghabiskan seluruh lebar area kontainer */
+    height: 8px; /* Mengatur ketebalan batang progress */
+    background-color: #f3f4f6; /* Warna abu-abu terang sebagai indikator sisa jalur kosong */
+    border-radius: 999px; /* Membuat ujung batang melengkung sempurna (rounded capsule) */
+    overflow: hidden; /* Memastikan batang biru di dalamnya ikut terpotong rapi mengikuti lengkungan */
+}
+
+/* Isi Batang Progress (Warna Biru Berjalan) */
+.progres-bar-fill {
+    width: 50%; /* FUNGSI KUNCI: Nilai width inilah yang menentukan persentase pengisian grafik misal: 30%, 50%, atau 75% */
+    height: 100%; /* Mengikuti penuh tinggi induknya (8px) */
+    background-color: var(--warna-primer); /* Menggunakan warna biru primer*/
+    border-radius: 999px; /* Menjamin ujung indikator biru tetap melengkung rapi */
+}
+
+.detail-course .aksi button {
+    width: 100%;
+    height: 36px;
+    font-size: 15px;
+    margin-top: 0.5rem;
+    cursor: pointer; /* Mengubah kursor menjadi tangan saat hover di desktop */
+    border: none;    /* Menghilangkan border bawaan browser yang kaku */
+    border-radius: 14px;
+    color: var(--warna-sidebar);
+    background-color: var(--warna-primer);
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.1s ease; /*Transition digunakan agar saat tombol ditekan atau dilepas, pergerakannya mulus (tidak patah-patah/instan)*/
+}
+.detail-course .aksi button:hover {
+    filter: brightness(0.9); 
+}
+.detail-course .aksi button:active { /*ketika di tekan*/
+    transform: scale(0.96); /*digunakan agar tombol seolah olah menekan */
+}
+
+@media (max-width: 1380px) {
+    /* .sidebar ul li:first-child{
+        display: block;
+    } */
+    main{
+        height: 100vh;
+        overflow-y: auto; /* scroll atas bawah auto*/
+    }
+    .container-1{
+        grid-template-columns: 1fr;
+        row-gap: 1.4rem;
+    }
+}
+@media (max-width: 1280px) {
+    .courses-view{
+        grid-template-columns: repeat(2, 1fr); /*agar mengulang 3x*/
+    }
+}
+@media (max-width: 1024px) {
+    body{
+        grid-template-columns: 1fr;
+        grid-template-areas: "main";
+    }
+    aside{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 87px;
+        overflow: hidden; /*Membatasi text overflow d*/
+        z-index: 999;
+        transition: width 0.5s ease-in-out; /*memberikan efek transisi perubahan lebar secara pelan (0.5 detik)*/
+    }
+    .sidebar{
+        padding: 0;
+    }
+    .sidebar ul li:first-child{
+        display: block;
+    }
+    .sidebar li a i{
+        margin-left: 0.3rem;
+    }
+    .sidebar li a p{
+        opacity: 0; 
+        visibility: hidden;
+        transform: translateX(-20px); /*Menggeser posisi awal teks mundur ke kiri sebanyak 20px  agar dia bersembunyi di balik bayang-bayang ikon menu */
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out, visibility 0.4s; /*Mengatur waktu animasi agar berjalan pelan selama 0.4 detik, jeda (delay) teks baru bergeser setelah aside mulai melebar. */
+    }
+    main {
+        grid-area: main;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 1.5rem;
+
+        /* FUNGSI KUNCI 1: Saat sidebar dalam kondisi default menyusut (87px), 
+           kita berikan jarak dinding luar sebelah kiri sebesar 87px. 
+           Ini mencegah konten main tertutup oleh icon menu sidebar. */
+        margin-left: 87px; 
+
+        /* FUNGSI KUNCI 2: Transition.
+           Wajib disamakan persis durasi dan kurva kecepatannya dengan transisi milik aside (0.5s ease-in-out).
+           Ini yang membuat area main ikut bergeser terdorong ke kanan secara pelan, halus, dan serentak! */
+        transition: margin-left 0.5s ease-in-out; 
+    }
+    .show-toggle{ /* Berfungsi ketika user mengklik toggleSidebar()*/
+        display: block;
+        width: 422px;
+    }
+    .show-toggle .sidebar li a p{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); /* Mengembalikan posisi teks maju bergeser ke kanan */
+    }
+    .courses-view{
+        grid-template-columns: repeat(3, 1fr); /*agar mengulang 3x*/
+    }
+}
+
+@media (max-width:998px) {
+    .courses-view{
+        grid-template-columns: repeat(2, 1fr); /*agar mengulang 3x*/
+    }
+}
+
+@media (max-width:677px) {
+    .courses-view{
+        grid-template-columns: repeat(1, 383px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 430px) {
+    /*Mengubah arah Grid secara total menjadi 3 baris vertikal*/
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 1fr 70px; /*Baris 1 (header atas) 60px statis Baris 2 (main content) 1fr (otomatis mengambil seluruh sisa ruang tengah) Baris 3 (aside/navbar bawah) 70px statis */
+        grid-template-areas: 
+        "header"
+        "main"
+        "sidebar";
+        height: 100vh;
+        overflow: hidden; /* Mengunci body agar tidak bisa di-scroll secara global */
+    }
+
+    /*==== desain navbar atas ===*/
+    /*Memunculkan Navbar Atas milik Paduka tepat di area 'header' grid */
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--warna-primer);
+    }
+
+    /*==== desain navbar bawah ===*/
+    /* Mengubah paksa tinggi aside agar patuh pada baris grid ketiga (70px) dan membatalkan fungsi height 100vh milik desktop */
+    aside{
+        width: 100%;
+        height: 100%;
+        grid-area: sidebar;
+        position: relative;
+    }
+
+    aside hr, aside .img {
+        display: none;
+    }
+
+    .sidebar{
+        padding: 0;
+        height: 100%;
+    }
+    /*Mengubah aliran list menu dari vertikal ke bawah (desktop) menjadi horizontal ke samping kanan (navbar bawah) menggunakan Flexbox.*/
+    .sidebar ul{
+        display: flex;
+        height: 100%;
+        justify-content: space-around; /* Membagi rata ruang untuk 4 tombol menu */
+        align-items: center;
+    }
+    .sidebar ul li{
+        width: 76px;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .sidebar ul li:first-child{
+        display: none !important;
+    }
+    /* Mengubah susunan isi menu (Ikon di atas, Teks di bawah) seperti layaknya aplikasi mobile */
+    .sidebar ul li a{
+        flex-direction: column;
+        padding: 8px 0;
+        row-gap: 4px;
+        justify-content: center;
+    }
+    .sidebar ul li a i{
+        padding-right: 0.3rem;
+    }
+    /* === TEMPLATE JIKA HALAMAN AKTIF === */
+    .sidebar ul .aktif{
+        border-radius: 24px; /*0 pojok kiri atas 50 pojok kanan atas 50 pojok kanan bawah 0 pojok kiri bawah */
+    }
+    .sidebar ul li a p {
+        font-size: 0.7rem; /* Memperkecil teks menu agar muat berdampingan */
+        color: #555;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); /* Mengembalikan posisi teks maju bergeser ke kanan */
+    }
+
+    /*==== desain main ===*/
+    main {
+        grid-area: main;
+        height: 100%; /*Mengunci area Main agar tetap memiliki tinggi yang dihitung otomatis oleh 1fr */
+        overflow-y: auto; /*croll-y aktif secara independen tanpa merusak posisi header dan footer*/
+        padding: 0.8rem;
+        margin-left: 0;
+    }
+
+    /*==== Heading Main===*/
+    .card-heading{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 174px;
+        background-color: var(--warna-sidebar);
+        border-radius: 24px;
+        margin-bottom: 1.4rem;
+        padding: 1.2rem;
+    }
+    .card-heading h1{
+        font-size: 28px;
+    }
+    .card-heading p{
+        font-size: 15px;
+        color: #757575;
+    }
+
+    /*==== desain Profile Crad ===*/
+    .profile-card{
+        height: 218px;
+    }
+    .profile-card h2{
+        font-size: 24px;
+    }
+    .profile-card hr{
+        display: none;
+    }
+    .identity{
+        font-size: 16px;
+    }
+    .identity img{
+        width: 121px;
+    }
+    .identity-detail{
+        padding: 0.6rem 0 0.8rem 0.8rem;
+    }
+    .courses-view{
+        grid-template-columns: repeat(1, 1fr); /*agar mengulang 3x*/
+    }
+}

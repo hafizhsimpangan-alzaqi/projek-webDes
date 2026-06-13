@@ -1,4 +1,5 @@
 //https://hostpresto.com/tutorials/using-mysql-with-node-js-a-complete-tutorial/
+// backend/config/db.js
 
 const mysql = require('mysql2'); //pemanggilan module mysql2 untuk digunakan dalam menghubungkan ke database mysql
 
