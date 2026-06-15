@@ -162,33 +162,527 @@ button:active {
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 4rem;
+    align-items: center;
     grid-template-areas: "about card";
 }
 .container-2 .about-us{
     grid-template-areas: about;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    line-height: 3rem;
+    
+}
+.container-2 .about-us h2 {
+    font-size: 3rem; /* Dinaikkan dari 2.5rem ke 3rem agar terlihat lebih besar dan megah */
+    color: #111827;
+    font-weight: 700;
+}
 
+.container-2 .about-us h2.infolearn {
+    font-size: 2.3rem;
+    color: var(--warna-primer);
+    margin-top: -0.5rem; /* Menarik teks InfoLearn sedikit ke atas agar padat */
+}
+.container-2 .about-us p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0 1.9rem 0;
+    color: #4b5563; /* Warna abu-abu charcoal premium agar mata user tidak lelah membaca */
+    text-align: left; /* Membuat rata kanan-kiri pada barisan teks sesuai coretan Paduka */
+}
+.container-2 .about-us button{
+    width: 50%;
+    height: 2.3rem;
+    background-color: var(--warna-primer);
+    color: var(--warna-bg);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
 }
 .container-2 .card-about{
-    grid-template-rows: card;
-    display: flex;    justify-content: center;
+    grid-area: card; 
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .container-2 .card-about .card{
-    width: 726px;
-    height: 726px;
+    width: 100%;
+    max-width: 650px; 
+    height: 650px;  
     background-image: url('../assets/belajar.jpeg');
     background-size: cover;
     background-position: center;
     border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
-/* article.container-2, article.container-3, article.container-4 {
-    height: 700px;
-    background-color: var(--warna-bg);
-    padding: 2rem;
-    border-bottom: 1px solid #eee;
-} */
-footer {
-    background-color: var(--warna-second);
-    padding: 2rem;
-    text-align: center;
+
+/* === CONTAINER 3 == */
+.container-3{
     width: 100%;
+    height: 898px;
+    height: auto;
+    background-color: var(--warna-bg);
+    padding: 3rem 3rem 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.container-3 .title{
+    display: flex;
+    flex-direction: column;
+}
+.container-3 .title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+.container-3 .title .learn-more{
+    display: flex;
+    justify-content: space-between;
+    /* padding: 0.3rem 0 0.3rem 0; */
+    align-items: center;
+}
+.container-3 .title .learn-more p {
+    font-size: 1.05rem;
+    color: #4b5563;
+}
+.container-3 .title .learn-more a{
+    color: var(--warna-primer);
+}
+.container-3 .course{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    width: 100%;
+}
+.container-3 .course .card-course{
+    background: white;
+    border-radius: 14px;
+    min-height: 349px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.container-3 .course .card-course:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 13px 25px -10px #C6E7FF;
+}
+.container-3 .course .course-recomend{
+    grid-column: span 2;
+    flex-direction: row;
+}
+.container-3 .course .course-recomend img {
+    /* FUNGSI KUNCI 1: Mengunci lebar gambar tepat sebesar 45% dari total lebar kartu horizontal.
+       Ini memberikan sisa 55% ruang kosong di sebelah kanan untuk ditempati teks detail. */
+    width: 45%; 
+    height: 100%; /* Memaksa tinggi gambar ditarik penuh membelah kartu dari atas ke bawah */
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px 0 0 14px; /* Sudut melengkung hanya dipasang di sisi kiri saja */
+}
+.container-3 .course .course-recomend .course-detail {
+    /* FUNGSI KUNCI 2: Mengunci sisa lebar ruang kanan sebesar 55% agar teks tidak meluber keluar */
+    width: 55%; 
+    height: 100%; /* Melar penuh vertikal mengikuti tinggi kartu */
+    padding: 1.5rem; /* Memberikan ruang napas internal figma yang lebih lega */
+    margin: 0 1.8rem 0 1.8rem ;
+}
+
+.container-3 .course .course-populer{
+    grid-column: span 2; /* Membelah 2 kolom horizontal di baris bawah */
+    background-color: var(--warna-primer); /* Mengunci warna dasar biru kebesaran Paduka */
+    color: #FFFFFF; /* Mengubah seluruh warna teks internal menjadi putih bersih */
+    padding: 24px; /* Memberikan ketebalan ruang napas figma di sekeliling kartu */
+    
+    display: flex;
+    flex-direction: column;
+    
+    /* FUNGSI KUNCI 1: Mendistribusikan ruang kosong secara merata dari atas ke bawah 
+       sehingga judul berada di atas, progress bar di tengah, dan tombol mengunci di dasar */
+    justify-content: space-between;
+}
+.container-3 .course .course-populer .populer-title {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+.container-3 .course .course-populer .populer-title p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8); /* Warna putih transparan agar sub-informasi tampak elegan */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.container-3 .course .course-populer .populer-title h3 {
+    font-size: 1.6rem; /* Ukuran font dibuat megah khusus untuk judul kelas populer */
+    font-weight: 600;
+}
+.container-3 .course .course-populer .populer-author {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-top: 15px;
+}
+.container-3 .course .course-populer .populer-stats {
+    background-color: rgba(255, 255, 255, 0.2); /* FUNGSI KUNCI 2: Membuat kotak putih transparan tipis tipis */
+    border-radius: 12px;
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    margin: 15px 0;
+}
+.container-3 .course .course-populer .populer-stats .stats-info {
+    display: flex;
+    justify-content: space-between; /* FUNGSI KUNCI 3: Memisahkan teks kiri dan teks 8% ke ujung kanan otomatis */
+    align-items: center;
+}
+.container-3 .course .course-populer .populer-stats .stats-info span {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+/* Jalur Batang Kosong */
+.container-3 .course .course-populer .populer-bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.25); /* Lapisan abu/putih transparan sebagai sisa jalur */
+    border-radius: 999px;
+    overflow: hidden;
+}
+/* Isi Batang Putih Berjalan */
+.container-3 .course .course-populer .populer-bar-fill {
+    width: 80%; /* FUNGSI KUNCI 4: Mengatur panjang grafik kemajuan kursus sebesar 80% sesuai gambar figma */
+    height: 100%;
+    background-color: #FFFFFF; /* Menggunakan warna putih padat murni */
+    border-radius: 999px;
+}
+/* 4. TOMBOL OPEN COURSE DI KANAN BAWAH (WHITE SOLID BUTTON) */
+.container-3 .course .course-populer button {
+    /* FUNGSI KUNCI 5: Mencabut tombol dari aturan rentang full width 
+       dan menarik posisinya secara mutlak mengunci di pojok KANAN BAWAH kartu */
+    align-self: flex-end; 
+    
+    width: 180px; /* Menentukan lebar proporsional dari tombol figma */
+    height: 38px;
+    background-color: #FFFFFF; /* Warna dasar putih murni */
+    color: var(--warna-primer); /* Warna teks menggunakan warna biru utama */
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.container-3 .course .course-populer button:hover {
+    background-color: #f3f4f6; /* Sedikit meredup lembut saat didekati kursor */
+}
+
+.container-3 .course .course-populer button:active {
+    transform: scale(0.96); /* Efek klik tactile tekan */
+}
+.container-3 .course .course-populer button:hover {
+    background-color: #f3f4f6; /* Sedikit meredup lembut saat didekati kursor */
+}
+
+/* Gambar Bawaan untuk Kartu Vertikal Biasa (Tetap Aman) */
+.container-3 .course .card-course:not(.course-recomend):not(.course-populer) img {
+    width: 100%;
+    height: 176px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    border-radius: 14px 14px 0 0;
+}
+.container-3 .course .card-course .course-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    flex-grow: 1;
+}
+.container-3 .course .card-course .course-detail .title {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+.container-3 .course .card-course .course-detail .title h3{
+    font-size: 1.1rem;
+    font-weight: 550;
+}
+.container-3 .course .card-course .course-detail p{
+    font-size: 0.65rem;
+    line-height: 15px;
+}
+.container-3 .course .card-course .course-detail .btn{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    gap: 0.57rem;
+}
+.container-3 .course .card-course .course-detail .btn button{
+    width: 100%;
+    height: 1.7rem;
+    background-color: var(--warna-primer);
+    color: var(--warna-bg);
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+
+.container-4 {
+    width: 100%;
+    /* FUNGSI KUNCI 1: Mengunci batas padding kanan-kiri sebesar 3rem agar 
+       lurus sejajar secara matematis dengan pembatas kontainer-3 di atasnya (ANTI-MELAR) */
+    padding: 3rem 3rem 4rem 3rem; 
+    background-color: var(--warna-bg);
+    
+    /* FUNGSI KUNCI 2: Menggunakan Flexbox vertikal agar blok judul atas 
+       dan barisan kartu bawah tersusun bertumpuk secara rapi */
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem; /* Jarak vertikal yang ideal antara judul dan barisan kartu */
+}
+
+.container-4 .title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-4 .title h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.container-4 .title .learn-more {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0.3rem 0;
+}
+.container-4 .title .learn-more p {
+    font-size: 1.05rem;
+    color: #4b5563;
+}
+.container-4 .title .learn-more a {
+    color: var(--warna-primer);
+    text-decoration: none;
+    font-size: 1rem;
+}
+.container-4 {
+    display: grid;
+    /* Membuat layout grid utama untuk memisahkan baris judul (Baris 1) dan baris kartu (Baris 2) */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; /* Jarak celah antar kartu sebesar 20px sesuai spesifikasi Paduka */
+}
+.container-4 .title {
+    grid-column: span 4;
+}
+.container-4 .card-course {
+    /* FUNGSI KUNCI 3: Memastikan kartu secara otomatis menempati 1 kolom pecahan (1fr) 
+       di baris kedua secara mandiri dan sejajar ke samping */
+    grid-column: span 1; 
+    
+    background: white;
+    border-radius: 14px;
+    height: 380px; /* Mengunci tinggi kartu agar seragam dan lurus horizontal */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); /* Efek shadow halus figma */
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+/* Efek interaktif saat kursor melintasi kartu */
+.container-4 .card-course:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 13px 25px -10px #C6E7FF;
+}
+
+.container-4 .card-course img {
+    width: 100%;
+    height: 176px; /* Tinggi spanduk materi gambar */
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    border-radius: 14px 14px 0 0; /* Lengkungan hanya di sudut atas */
+}
+
+/* Wadah Detail Konten di bawah Gambar */
+.container-4 .card-course .course-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Memisahkan area judul (atas) dan area tombol (bawah) */
+    flex-grow: 1; /* Memaksa konten menghabiskan seluruh sisa ruang tinggi kartu */
+    padding: 1rem;
+}
+
+.container-4 .card-course .course-detail .title {
+    /* Reset gaya grid induk agar elemen internal teks bertindak sebagai flexbox biasa */
+    grid-column: auto; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+}
+
+.container-4 .card-course .course-detail .title h3 {
+    font-size: 1.1rem;
+    font-weight: 550;
+    color: #111827;
+}
+
+.container-4 .card-course .course-detail p {
+    font-size: 0.65rem;
+    line-height: 15px;
+}
+
+/* Kelompok Komponen Tombol dan Informasi Pembuat Kursus */
+.container-4 .card-course .course-detail .btn {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto; /* Mengunci komponen agar selalu menetap di dasar kartu */
+    gap: 0.5rem;
+}
+
+.container-4 .card-course .course-detail .btn p {
+    font-size: 0.65rem;
+    line-height: 15px;
+}
+
+/* Tombol Biru Akses Kursus */
+.container-4 .card-course .course-detail .btn button {
+    width: 100%;
+    height: 38px; /* Menggunakan ukuran piksel agar teks tidak terpotong */
+    background-color: var(--warna-primer);
+    color: var(--warna-bg);
+    border: none;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Mematikan fungsi elemen kosong .img di HTML agar tidak merusak tata letak */
+.container-4 .card-course .img {
+    display: none;
+}
+
+
+footer {
+    width: 100%;
+    background-color: var(--warna-second);
+    display: flex;
+    flex-direction: column; 
+    margin-top: auto;
+}
+
+/* 1. LANTAI ATAS: DIKECILKAN TINGGI & PADDING-NYA */
+footer .footer-content {
+    width: 100%;
+    /* Mengurangi padding vertikal dari 3.5rem menjadi 2rem saja agar tinggi abu-abu menyusut */
+    padding: 2rem 3rem; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+/* 2. BLOK KIRI: LOGO & LANDING PAGE (SKALA DIKECILKAN) */
+footer .footer-content .brand-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.4rem; /* Memadatkan jarak vertikal antar baris */
+}
+
+footer .footer-content .brand-side .footer-logo img {
+    /* FUNGSI KUNCI 1: Mengecilkan skala ukuran logo dari 75px menjadi 50px agar proporsional */
+    width: 50px; 
+    height: auto;
+}
+
+footer .footer-content .brand-side h3 {
+    /* FUNGSI KUNCI 2: Mengecilkan font huruf judul dari 1.4rem menjadi 1.1rem */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* 3. DAFTAR LINK NAVIGASI & KUNCI ANTI-UNDERLINE */
+footer .footer-content ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem; /* Jarak vertikal daftar list dipersempit */
+}
+
+footer .footer-content ul li a {
+    text-decoration: none;
+    /* FUNGSI KUNCI 3: Mengecilkan huruf isi menu menjadi lebih imut dan clean (14px) */
+    font-size: 0.88rem; 
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+/* ==========================================================================
+   REVISI UTAMA: BLOKIR HOVER UNDERLINE & GANTI WARNA PRIMER
+   ========================================================================== */
+footer .footer-content ul li a:hover {
+    /* FUNGSI KUNCI 4: Memastikan warna teks berubah menjadi biru primer kebesaran Paduka saat disorot */
+    color: var(--warna-primer); 
+    
+    /* FUNGSI KUNCI 5: Menghapus garis bawah (underline) secara mutlak sesuai perintah Paduka! */
+    text-decoration: none !important; 
+}
+
+/* 4. BLOK KANAN: MEDIA SOSIAL (SKALA DIKECILKAN) */
+footer .footer-content .social-side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    text-align: right; 
+}
+
+footer .footer-content .social-side h3 {
+    /* FUNGSI KUNCI 6: Mengecilkan font judul media sosial menjadi 1.1rem agar seimbang dengan kiri */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   LANTAI BAWAH: STRIP COPYRIGHT YANG LEBIH TIPIS (COMPACT STRIP)
+   ========================================================================== */
+footer .footer-copyright {
+    width: 100%;
+    background-color: #FFFFFF; 
+    /* FUNGSI KUNCI 7: Mengecilkan ketebalan padding vertikal strip putih dari 1.2rem menjadi 0.7rem */
+    padding: 0.7rem 0; 
+    border-top: 1px solid #e5e7eb; 
+    text-align: center; 
+}
+
+footer .footer-copyright p {
+    /* FUNGSI KUNCI 8: Mengecilkan ukuran huruf hak cipta menjadi sangat minimalis (13px) */
+    font-size: 0.8rem; 
+    color: #9ca3af; 
+    font-weight: 500;
 }
