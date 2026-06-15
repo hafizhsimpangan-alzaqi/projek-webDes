@@ -1,1 +1,194 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --warna-primer: #1A56DB;
+    --warna-hover: #C6E7FF;
+    --warna-second: #EAEAEA;
+    --warna-bg: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    grid-template-areas: 
+    "header"
+    "main";
+    font-family: "Poppins", sans-serif;
+}
+
+/* === NAVBAR == */
+header{
+    top: 0;
+    position: sticky;
+    grid-area: header;
+    background-color: var(--warna-primer);
+    height: 100%;
+}
+nav{
+    display: flex;
+    min-height: 100%;
+    justify-content: space-between;
+    background-color: var(--warna-primer);
+    align-items: center;
+}
+nav .img img{
+    width: 50px;
+    margin-left: 2.1rem;
+    padding-top: 0.4rem;
+}
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 1.6rem;
+    font-size: 20px;
+}
+.menu ul li a{
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: var(--warna-second);
+}
+a:link, a:visited{
+    color: var(--warna-bg);
+    text-decoration: none;
+}
+.icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    gap: 0.8rem;
+    color: var(--warna-bg);
+}
+.icon i{
+    cursor: pointer;
+}
+.icon i:hover{
+    color: var(--warna-second);
+}
+.icon img{
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.2rem 0 0.2rem 0;
+    margin-right: 2.1rem;
+    cursor: pointer;
+}
+main{
+    grid-area: main;
+    height: 100%;
+    overflow-y: auto;
+}
+article{
+    display: flex;
+    flex-direction: column;
+}
+article .container-1{
+    height: 989px;
+    background-image: 
+        linear-gradient(rgba(6, 6, 6, 0.190), rgba(6, 6, 6, 0.190)), 
+        url('../assets/Unsoed-FT.png');
+    
+    /* FUNGSI KUNCI 2: Memaksa kedua lapisan (warna gelap & gambar) melebar proporsional 
+       mengikuti skala width/height objek tanpa merusak rasio aspek (ANTI-GEPENG) */
+    background-size: cover;
+    
+    /* FUNGSI KUNCI 3: Mengunci pusat lensa gambar agar selalu simetris berada di tengah-tengah */
+    background-position: center;
+
+    /* Tambahan arsitektur tata letak internal agar teks di dalamnya otomatis duduk di tengah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container-1 .wellcome {
+    line-height: 89px;
+}
+.container-1 .wellcome h1{
+    font-size: 96px;
+    color: var(--warna-bg);
+}
+.container-1 .wellcome .infolearn{
+    color: var(--warna-primer);
+}
+.container-1 .kata-kata{
+    width: 643px;
+    font-weight: 600;
+    color: var(--warna-bg);
+    margin: 4.5rem;
+}
+.container-1 .btn {
+    display: flex;
+    gap: 1.2rem;
+}
+.container-1 .btn button{
+    height: 46px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.container-1 .btn button:not(.btn-vlp) {
+    background-color: var(--warna-primer);
+    color: var(--warna-bg);
+    border: none;
+    padding: 0.67rem 1rem 0.8rem 1.2rem;
+}
+/* EFEK TOMBOL MENEKAN GLOBAL */
+button:active {
+    transform: scale(0.96); /* Efek klik kenyal tertekan */
+}
+.container-1 .btn .btn-vlp{
+    padding: 0.5rem 1rem 0.8rem 1rem;
+    background-color: transparent; 
+    color: var(--warna-bg); 
+    border: 2px solid var(--warna-bg);
+}
+.container-1 .btn .btn-vlp:hover{
+    background-color: var(--warna-bg);
+    border: 2px solid var(--warna-primer);
+    color: var(--warna-primer); 
+}
+
+.container-2{
+    height: 939px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "about card";
+}
+.container-2 .about-us{
+    grid-template-areas: about;
+
+}
+.container-2 .card-about{
+    grid-template-rows: card;
+    display: flex;    justify-content: center;
+}
+.container-2 .card-about .card{
+    width: 726px;
+    height: 726px;
+    background-image: url('../assets/belajar.jpeg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 24px;
+}
+/* article.container-2, article.container-3, article.container-4 {
+    height: 700px;
+    background-color: var(--warna-bg);
+    padding: 2rem;
+    border-bottom: 1px solid #eee;
+} */
+footer {
+    background-color: var(--warna-second);
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+}

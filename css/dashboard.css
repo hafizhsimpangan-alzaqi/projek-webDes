@@ -29,7 +29,6 @@ body{
     grid-template-columns: 422px 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "sidebar main";
-    grid-template-rows: 1fr;
     background-color: var(--warna-bg);
 }
 
@@ -48,7 +47,8 @@ aside{
 }
 
 .img img{
-    width: 78px;
+    width: 67px;
+    margin: 0.8rem;
 }
 
 .sidebar ul li:first-child{
@@ -341,6 +341,10 @@ main{
         z-index: 999;
         transition: width 0.5s ease-in-out; /*memberikan efek transisi perubahan lebar secara pelan (0.5 detik)*/
     }
+    .img img{
+        width: 67px;
+        padding-right: 0.5rem;
+    }
     .sidebar{
         padding: 0;
     }
@@ -376,11 +380,16 @@ main{
         display: block;
         width: 422px;
     }
+    .show-toggle .img img{
+        width: 67px;
+        margin: 0.8rem;
+    }
     .show-toggle .sidebar li a p{
         opacity: 1;
         visibility: visible;
         transform: translateX(0); /* Mengembalikan posisi teks maju bergeser ke kanan */
     }
+
     .courses-view{
         grid-template-columns: repeat(3, 1fr); /*agar mengulang 3x*/
     }
@@ -418,6 +427,19 @@ main{
         display: flex;
         justify-content: space-between;
         background-color: var(--warna-primer);
+        align-items: center;
+    }
+    nav .icon{
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        color: var(--warna-sidebar);
+        font-size: 24px;
+    }
+    nav img{
+        margin: 0.2rem 0.8rem 0.2rem 0.8rem;
+        width: 47px;
+        border-radius: 50px;
     }
 
     /*==== desain navbar bawah ===*/
