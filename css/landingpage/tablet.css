@@ -1,0 +1,272 @@
+@media screen and (max-width:1024px){
+
+    /* ==================================
+       NAVBAR
+       ================================== */
+
+    nav{
+        padding: 0 1rem;
+    }
+
+    .menu ul{
+        gap: 1rem;
+        font-size: 14px;
+    }
+
+    nav .img img{
+        width: 42px;
+        margin-left: 0;
+    }
+
+    .icon img{
+        width: 40px;
+        margin-right: 0;
+    }
+
+    /* ==================================
+       HERO
+       ================================== */
+
+    .container-1{
+        height: 500px !important;
+    }
+
+    .container-1 .wellcome h1{
+        font-size: 60px;
+    }
+
+    .container-1 .kata-kata{
+        width: 500px;
+        margin: 2rem 0;
+        font-size: .9rem;
+    }
+
+    .container-1 .btn button{
+        height: 38px;
+        font-size: .8rem;
+    }
+
+    /* ==================================
+       ABOUT
+       ================================== */
+
+    .container-2{
+        height: auto;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .container-2 .about-us h2{
+        font-size: 2rem;
+    }
+
+    .container-2 .about-us h2.infolearn{
+        font-size: 1.5rem;
+    }
+
+    .container-2 .about-us p{
+        font-size: .8rem;
+    }
+
+    .container-2 .card-about .card{
+        height: 380px;
+    }
+
+    /* ==================================
+       KELAS UMUM
+       ================================== */
+
+    /* ==================================
+    KELAS UMUM
+    ================================== */
+
+    .container-3{
+        padding: 2rem;
+    }
+
+    .container-3 .course{
+        grid-template-columns: repeat(3,1fr);
+        gap: 16px;
+    }
+
+    /* rekomendasi */
+
+    .container-3 .course .course-recomend{
+        grid-column: span 2;
+        min-height: 260px;
+    }
+
+    .container-3 .course .course-recomend img{
+        width: 45%;
+    }
+
+    .container-3 .course .course-recomend .course-detail{
+        width: 55%;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    /* sembunyikan 2 card bawah */
+
+    .container-3 .course .card-course:nth-child(4),
+    .container-3 .course .card-course:nth-child(5){
+        display:none;
+    }
+
+    /* card populer */
+
+    .container-3 .course .course-populer{
+        grid-column: 1 / span 2;
+        grid-row: 2;
+
+        min-height: 150px;
+        padding: 14px;
+        row-gap: 10px;
+    }
+
+    /* judul */
+
+    .container-3 .course .course-populer .populer-title h3{
+        font-size: .95rem;
+        font-weight: 600;
+    }
+
+    .container-3 .course .course-populer .populer-title p{
+        font-size: .55rem;
+    }
+
+    /* author */
+
+    .container-3 .course .course-populer .populer-author{
+        font-size: .65rem;
+        line-height: 1.4;
+        margin-top: 4px;
+    }
+
+    /* box progress */
+
+    .container-3 .course .course-populer .populer-stats{
+        padding: 8px;
+        margin: 6px 0;
+        border-radius: 8px;
+    }
+
+    /* teks progress */
+
+    .container-3 .course .course-populer .populer-stats .stats-info span{
+        font-size: .7rem;
+    }
+
+    /* progress bar */
+
+    .container-3 .course .course-populer .populer-bar-bg{
+        height: 4px;
+    }
+
+    /* tombol */
+
+    .container-3 .course .course-populer button{
+        width: 110px;
+        height: 28px;
+        font-size: .65rem;
+        border-radius: 6px;
+    }
+
+    /* card biasa */
+
+    .container-3 .course .card-course{
+        min-height: 280px;
+    }
+
+    .container-3 .course .card-course:not(.course-recomend):not(.course-populer) img{
+        height: 140px;
+    }
+
+    .container-3 .course .card-course .course-detail .title h3{
+        font-size: .9rem;
+    }
+
+    .container-3 .course .card-course .course-detail p{
+        font-size: .65rem;
+    }
+
+    .container-3 .course .card-course .course-detail .btn button{
+        height: 30px;
+        font-size: .7rem;
+    }
+    .container-3 .title h2,
+    .container-4 .title h2{
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+
+    .container-3 .title .learn-more p,
+    .container-4 .title .learn-more p{
+        font-size: 0.9rem;
+    }
+
+    .container-3 .title .learn-more a,
+    .container-4 .title .learn-more a{
+        font-size: 0.9rem;
+    }
+
+    /* ==================================
+    KELAS KHUSUS
+    ================================== */
+
+    .container-4{
+        grid-template-columns: repeat(3,1fr);
+        padding: 2rem;
+        gap: 16px;
+    }
+
+    .container-4 .title{
+        grid-column: 1 / -1;
+    }
+
+    /* JANGAN FIX HEIGHT */
+
+    .container-4 .card-course{
+        height: auto;
+        min-height: 280px;
+    }
+
+    .container-4 .card-course img{
+        height: 140px;
+    }
+
+    .container-4 .card-course .course-detail{
+        padding: .8rem;
+    }
+
+    .container-4 .card-course .course-detail .title h3{
+        font-size: .9rem;
+    }
+
+    .container-4 .card-course .course-detail p{
+        font-size: .65rem;
+        line-height: 1.35;
+    }
+
+    .container-4 .card-course .course-detail .btn button{
+        height: 30px;
+        font-size: .7rem;
+    }
+
+    /* ==================================
+       FOOTER
+       ================================== */
+
+    footer .footer-content{
+        padding: 1.5rem 2rem;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: 1rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .8rem;
+    }
+}

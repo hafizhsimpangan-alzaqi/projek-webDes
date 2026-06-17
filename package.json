@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "@tailwindcss/cli": "^4.3.0",
-    "mysql2": "^3.22.5",
-    "tailwindcss": "^4.3.0"
-  }
-}

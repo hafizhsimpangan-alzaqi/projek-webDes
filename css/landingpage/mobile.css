@@ -1,0 +1,307 @@
+@media screen and (max-width:425px){
+
+    /* ==========================================================================
+       REVISI KUNCI 1: SINKRONISASI TINGGI GRID INDUK BODY
+       ========================================================================== */
+    body{
+        overflow-x: hidden;
+        /* FUNGSI KUNCI MUTLAK: Mengubah jatah baris grid desktop (64px) menjadi 60px.
+           Ini menutup ruang hampa 4px secara instan sehingga gap putih lenyap permanen! */
+        grid-template-rows: 60px 1fr; 
+    }
+
+    /* =========================
+       NAVBAR
+       ========================= */
+    header{
+        height: 60px;
+        background-color: var(--warna-primer);
+        position: relative;
+        z-index: 100;
+    }
+
+    nav{
+        padding: 0 .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        background-color: var(--warna-primer);
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .nav-left{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .nav-left .ri-menu-line{
+        display: block;
+        font-size: 1.3rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    nav .img img{
+        width: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon{
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        color: #fff;
+    }
+
+    .icon i{
+        display: block;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .icon img{
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ==========================================================================
+       REVISI KUNCI 2: HERO KONTEN-1 (MENYATU SEMPURNA TANPA MARGIN MINUS KAKU)
+       ========================================================================== */
+    main {
+        margin-top: 0;
+        padding-top: 0;
+        height: 100%;
+    }   
+    
+    .container-1 {
+        height: 280px !important;
+        padding: 2rem 1rem; /* Padding internal diseimbangkan */
+        
+        /* Margin top dikembalikan ke nol bersih karena fondasi Grid body di atas sudah rapat sempurna */
+        margin-top: 0; 
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .container-1 .wellcome {
+        line-height: 1.1 !important;
+        margin-top: 0 !important; 
+        padding-top: 0;
+    }
+
+    .container-1 .wellcome h1 {
+        font-size: 1.8rem; 
+        line-height: 1.1;
+        margin: 0 !important; 
+    }
+
+    .container-1 .wellcome .infolearn {
+        font-size: 1.8rem;
+        margin: 0 !important;
+    }
+
+    .container-1 .kata-kata {
+        width: 100%;
+        max-width: 290px;
+        margin: 0.6rem auto 1.2rem auto; 
+        font-size: .65rem; 
+        line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       TOMBOL HERO DINAMIS (MEMPERTAHANKAN TINGKAT KERAPIAN FIGMA PADUKA)
+       ========================================================================== */
+    .container-1 .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.6rem;
+        width: 100%;
+    }
+
+    .container-1 .btn button {
+        width: auto; 
+        height: 34px; 
+        padding: 0 1rem; 
+        font-size: .65rem; 
+        font-weight: 600;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 6px; 
+        white-space: nowrap; 
+    }
+
+    /* =========================
+       ABOUT
+       ========================= */
+    .container-2{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.25rem;
+    }
+
+    .container-2 .about-us{
+        order: 1;
+        line-height: normal;
+    }
+
+    .container-2 .about-us h2{
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .container-2 .about-us h2.infolearn{
+        font-size: 1.15rem;
+        margin-top: .2rem;
+    }
+
+    .container-2 .about-us p{
+        font-size: .72rem;
+        line-height: 1.7;
+        margin: .8rem 0 1rem;
+    }
+
+    .container-2 .about-us button{
+        width: 110px;
+        height: 32px;
+        border-radius: 10px;
+        font-size: .7rem;
+    }
+
+    .container-2 .card-about{
+        order: 2;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-2 .card-about .card{
+        width: 100%;
+        max-width: none;
+        height: 320px;
+        border-radius: 16px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* =========================
+       SECTION TITLE
+       ========================= */
+    .container-3,
+    .container-4{
+        padding: 1rem;
+    }
+
+    .container-3 .title h2,
+    .container-4 .title h2{
+        font-size: 1.3rem;
+    }
+
+    .container-3 .title .learn-more p,
+    .container-4 .title .learn-more p{
+        font-size: .65rem;
+    }
+
+    .container-3 .title .learn-more a,
+    .container-4 .title .learn-more a{
+        font-size: .65rem;
+    }
+
+    /* =========================
+       KELAS UMUM
+       ========================= */
+    .container-3 .course{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .container-3 .course .course-recomend{
+        grid-column: auto;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .container-3 .course .course-recomend img{
+        width: 100%;
+        height: 160px;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .container-3 .course .course-recomend .course-detail{
+        width: 100%;
+        padding: .8rem;
+    }
+
+    .container-3 .course .card-course:nth-child(3),
+    .container-3 .course .card-course:nth-child(4),
+    .container-3 .course .card-course:nth-child(5){
+        display: none;
+    }
+
+    .container-3 .course .course-populer{
+        grid-column: auto;
+        grid-row: auto;
+        min-height: auto;
+        padding: .8rem;
+    }
+
+    /* =========================
+       KELAS KHUSUS
+       ========================= */
+    .container-4{
+        grid-template-columns: 1fr;
+    }
+
+    .container-4 .title{
+        grid-column: auto;
+    }
+
+    /* =========================
+       FOOTER
+       ========================= */
+    footer .footer-content{
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    footer .footer-content .social-side{
+        text-align: left;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: .8rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .65rem;
+    }
+
+    footer .footer-copyright p{
+        font-size: .55rem;
+    }
+}
