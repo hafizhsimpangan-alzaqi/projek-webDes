@@ -73,6 +73,7 @@ a:link, a:visited{
 }
 .icon i{
     cursor: pointer;
+    display: block;
 }
 .icon i:hover{
     color: var(--warna-second);
