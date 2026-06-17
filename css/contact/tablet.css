@@ -1,0 +1,277 @@
+/* TABLET CONTACT US */
+@media screen and (max-width:1024px){
+
+    /* ==================================
+       NAVBAR
+       ================================== */
+
+    nav{
+        padding: 0 1rem;
+    }
+
+    .menu ul{
+        gap: 1rem;
+        font-size: 14px;
+    }
+
+    nav .img img{
+        width: 42px;
+        margin-left: 0;
+    }
+
+    .icon img{
+        width: 40px;
+        margin-right: 0;
+    }
+
+    /* MAIN */
+main {
+        grid-area: main;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .contact-page-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ----------------------------------------------------------------------
+       STYLE 1: HERO BANNER TABLET ADJUSTMENT
+       ---------------------------------------------------------------------- */
+    .contact-hero {
+        width: 100%;
+        height: 200px; 
+        margin-top: -2px;
+        background-image: 
+            linear-gradient(rgba(6, 6, 6, 0.190), rgba(6, 6, 6, 0.190)), 
+            url('../../assets/Unsoed-FT.png'); 
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-hero h1 {
+        color: var(--warna-bg);
+        font-size: 2.2rem; 
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    /* ----------------------------------------------------------------------
+       STYLE 2: BODY LAYOUT GRID FOR TABLET (KOREKSI CELL SPASI)
+       ---------------------------------------------------------------------- */
+    .contact-body {
+        width: 100%;
+        max-width: 100%; 
+        padding: 3rem 2rem 4rem 2rem; 
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem;
+    }
+
+    .contact-body .contact-heading {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-body .contact-heading h2 {
+        font-size: 1.6rem; 
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: -0.5px;
+    }
+
+    .contact-body .contact-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr; 
+        column-gap: 2.5rem; 
+        
+        /* FUNGSI KUNCI 1: Mengembalikan ke 'stretch' agar tinggi total kartu kanan 
+           otomatis memanjang ke bawah lurus sejajar dengan ekor tombol formulir kiri Paduka! */
+        align-items: stretch; 
+    }
+
+    /* ----------------------------------------------------------------------
+       COMPONENTS A: FORMULIR INPUT MAHASISWA (TABLET SCALING)
+       ---------------------------------------------------------------------- */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.1rem; 
+    }
+
+    .contact-form .form-group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+    }
+
+    .contact-form .form-group label {
+        font-size: 0.9rem; 
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        width: 100%;
+        padding: 0.7rem 0.9rem; 
+        font-size: 0.9rem;
+        border: 1px solid #9ca3af;
+        border-radius: 8px;
+    }
+
+    .contact-form .btn-submit {
+        width: 100px;
+        height: 36px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        background-color: var(--warna-primer);
+        color: var(--warna-bg);
+        border: none;
+        cursor: pointer;
+    }
+
+/* ----------------------------------------------------------------------
+       COMPONENTS B: KARTU PETA GOOGLE MAPS (REVISI CLIPPING & PADDING KANAN)
+       ---------------------------------------------------------------------- */
+    .map-card {
+        width: 100%;
+        background-color: var(--warna-bg);
+        border-radius: 20px; 
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        
+        /* Mengembalikan ke tinggi fluid 100% mengikuti klem stretch induk grid tablet 
+           agar sejajar lurus dengan tombol Enter di formulir kiri */
+        height: 80%; 
+        margin-top: 0; 
+    }
+
+    /* Penyesuaian Lensa Gambar Denah Peta Tablet */
+ /* ----------------------------------------------------------------------
+       COMPONENTS B: KARTU PETA GOOGLE MAPS (REVISI ANTARMUKA TABLET PRESET)
+       ---------------------------------------------------------------------- */
+    .map-card {
+        width: 100%;
+        background-color: var(--warna-bg);
+        border-radius: 20px; 
+        overflow: hidden;
+        
+        /* FUNGSI KUNCI 1: Mengaktifkan kendali Flexbox vertikal satu arah pada sasis kartu */
+        display: flex;
+        flex-direction: column;
+        
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+        
+        /* Mempertahankan tinggi penuh mengikuti klem stretch induk grid tablet */
+        height: 100%; 
+        margin-top: 0; 
+    }
+
+    /* Penyesuaian Lensa Gambar Denah Peta Tablet */
+    .map-card .map-image-wrapper {
+        width: 100%;
+        
+        /* FUNGSI KUNCI 2: Mengubah flex-grow menjadi auto (tidak merenggang liar) 
+           dan mengunci tinggi maksimal gambar secara solid pada angka 280px.
+           Langkah ini memberikan batasan mutlak bagi gambar agar tidak melar raksasa 
+           dan tidak menindas elemen teks di bawahnya! */
+        flex-grow: 1;
+        min-height: 240px;
+        max-height: 280px; 
+        overflow: hidden;
+    }
+
+    .map-card .map-image-wrapper img {
+        width: 100%;
+        /* FUNGSI KUNCI 3: Mengunci tinggi gambar murni 100% mengisi penuh penampang wrapper 
+           tanpa menyisakan ruang transparan kosong yang memicu kebocoran layout */
+        height: 100%; 
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* KOTAK INFORMASI INTERNAL (DENGAN MANAJEMEN FLEXBOX MANDIRI) */
+    .map-card .map-info-box {
+        /* FUNGSI KUNCI 4: Mengaktifkan flexbox internal khusus di dalam boks teks */
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        
+        /* FUNGSI KUNCI 5: Mengubah flex-shrink menjadi grow agar boks informasi 
+           mengambil alih sisa tinggi bawah kartu secara fleksibel dan lapang */
+        flex-grow: 1;
+        flex-shrink: 1;
+        
+        /* Mengunci ketebalan ruang napas internal dan bantalan bawah tombol */
+        padding: 1.5rem 1.5rem 1.8rem 1.5rem; 
+        background-color: var(--warna-bg);
+    }
+
+    .map-card .map-info-box h3 {
+        font-size: 1.05rem; 
+        font-weight: 700;
+        color: #111827;
+        margin: 0;
+        /* FUNGSI KUNCI 6: Memaksa teks judul membersihkan diri dari tumpukan elemen atas */
+        clear: both; 
+    }
+
+    .map-card .map-info-box p {
+        font-size: 0.8rem; 
+        color: #6b7280;
+        margin-bottom: 1.2rem; 
+    }
+
+    /* Tombol Biru Google Maps (MENGUNCI PRESISI DI DASAR KARTU DENGAN PADDING AMAN) */
+    .map-card .btn-maps {
+        width: 100%;
+        height: 36px; 
+        background-color: var(--warna-primer);
+        color: var(--warna-bg) !important;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.8rem; 
+        
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: background-color 0.2s;
+        
+        /* FUNGSI KUNCI 7: Magnet vertikal otomatis yang mengunci tombol Google Maps 
+           menetap abadi di lantai paling dasar kartu, menciptakan ruang bernapas yang proporsional */
+        margin-top: auto; 
+    }
+
+    .map-card .btn-maps:hover {
+        background-color: #1244b9;
+    }
+
+    /* FOOTER */
+        /* ==================================
+       FOOTER
+       ================================== */
+
+    footer .footer-content{
+        padding: 1.5rem 2rem;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: 1rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .8rem;
+    }
+}

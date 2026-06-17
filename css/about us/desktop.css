@@ -1,0 +1,674 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --warna-primer: #1A56DB;
+    --warna-hover: #C6E7FF;
+    --warna-second: #EAEAEA;
+    --warna-bg: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    grid-template-areas: 
+    "header"
+    "main";
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    top: 0;
+    position: sticky;
+    grid-area: header;
+    background-color: var(--warna-primer);
+    height: 100%;
+}
+nav{
+    display: flex;
+    min-height: 100%;
+    justify-content: space-between;
+    background-color: var(--warna-primer);
+    align-items: center;
+}
+nav i{
+    display: none;
+}
+nav .img img{
+    width: 50px;
+    margin-left: 2.1rem;
+    padding-top: 0.4rem;
+}
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 1.6rem;
+    font-size: 20px;
+}
+.menu ul li a{
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: var(--warna-second);
+}
+a:link, a:visited{
+    color: var(--warna-bg);
+    text-decoration: none;
+}
+.icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    gap: 0.8rem;
+    color: var(--warna-bg);
+}
+.icon i{
+    display: block;
+    cursor: pointer;
+}
+.icon i:hover{
+    color: var(--warna-second);
+}
+.icon img{
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.2rem 0 0.2rem 0;
+    margin-right: 2.1rem;
+    cursor: pointer;
+}
+main{
+    grid-area: main;
+    height: 100%;
+    overflow-y: auto;
+}
+article{
+    display: flex;
+    flex-direction: column;
+}
+article .container-1{
+    height: 989px;
+    background-image: 
+        linear-gradient(rgba(6, 6, 6, 0.190), rgba(6, 6, 6, 0.190)), 
+        url('../assets/Unsoed-FT.png');
+    
+    /* FUNGSI KUNCI 2: Memaksa kedua lapisan (warna gelap & gambar) melebar proporsional 
+       mengikuti skala width/height objek tanpa merusak rasio aspek (ANTI-GEPENG) */
+    background-size: cover;
+    
+    /* FUNGSI KUNCI 3: Mengunci pusat lensa gambar agar selalu simetris berada di tengah-tengah */
+    background-position: center;
+
+    /* Tambahan arsitektur tata letak internal agar teks di dalamnya otomatis duduk di tengah */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* --- Styling Utama Container --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px; /* Memberikan ruang atas-bawah yang lega */
+}
+
+.about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px; /* Jarak antara teks dan gambar */
+}
+
+/* --- Kolom Kiri: Konten Teks --- */
+.about-content {
+    flex: 1;
+}
+
+.about-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 0px;
+    line-height: 1.1;
+}
+
+.about-content .subtitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1e56d4; /* Warna biru sesuai tema navigasi */
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    text-align: justify; /* Membuat teks rata kanan-kiri sesuai gambar */
+}
+
+/* --- Tombol (Button) --- */
+.btn-primary {
+    background-color: #1e56d4;
+    color: #ffffff;
+    border: none;
+    padding: 14px 100px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 10px; /* Sudut tombol agak melengkung halus */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #153fa3; /* Warna biru sedikit lebih gelap saat di-hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* --- Kolom Kanan: Gambar --- */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 550px; /* Membatasi lebar maksimal gambar agar proporsional */
+    height: auto;
+    border-radius: 24px; /* Membuat sudut gambar tumpul/rounded padat */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Efek bayangan lembut di bawah gambar */
+    object-fit: cover;
+}
+
+/* --- Fitur Responsif (Mobile Friendly) --- */
+@media (max-width: 992px) {
+    .about-us {
+        flex-direction: column; /* Mengubah posisi menjadi atas-bawah pada layar tablet/HP */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .about-content p {
+        text-align: center; /* Mengubah teks menjadi rata tengah pada layar kecil */
+    }
+
+    .about-image {
+        justify-content: center;
+    }
+    
+    .about-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .about-content .subtitle {
+        font-size: 1.8rem;
+    }
+}
+/* --- Styling Section Fitur & Quiz --- */
+.features-section {
+    width: 100%;
+    background-color: #e6e6e6; /* Warna latar belakang abu-abu sesuai gambar */
+    padding: 60px 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama rata */
+    gap: 50px; /* Jarak antara kolom kiri dan kanan */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.feature-card {
+    text-align: center; /* Membuat semua konten di dalamnya rata tengah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling Ikon Topi Toga */
+.feature-icon {
+    font-size: 2.5rem; /* Ukuran ikon */
+    color: #111111; /* Warna hitam sesuai gambar */
+    margin-bottom: 15px;
+}
+
+/* Styling Judul Fitur */
+.feature-title {
+    color: #1e56d4; /* Warna biru utama */
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    max-width: 300px; /* Membatasi lebar judul agar ter-wrap dengan bagus */
+}
+
+/* Styling Deskripsi Teks */
+.feature-text {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+    max-width: 460px; /* Membatasi lebar teks agar bentuknya silinder rapi seperti di gambar */
+    text-align: center;
+}
+
+/* --- Responsif untuk Layar HP/Tablet --- */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* Menjadi 1 kolom bertumpuk di layar kecil */
+        gap: 60px;
+    }
+    
+    .feature-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* --- Styling Section Makna Logo --- */
+.logo-meaning-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.logo-meaning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- Kolom Kiri: Kartu Tempat Logo --- */
+.logo-display-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-card-square {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+}
+
+.logo.infolearn {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: 
+        drop-shadow(4px 6px 8px rgba(160, 120, 30, 0.35)) 
+        drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));     
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* --- Kolom Kanan: Konten Teks & Judul --- */
+.logo-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.logo-title-right {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 0px;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.logo-subtitle-right {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e56d4;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.logo-description-text {
+    font-size: 0.98rem;
+    color: #555555;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* --- Baris Label Kapsul Statis --- */
+.logo-tags-container {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.logo-tag {
+    background-color: #1e56d4;
+    color: #ffffff;
+    padding: 12px 0;
+    width: 150px; /* Lebar konstan seperti di mockup */
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 25px; /* Bentuk melengkung penuh/kapsul */
+    text-align: center;
+    display: inline-block; /* Memastikan dimensi width dan padding bekerja */
+    user-select: none; /* Menghindari teks ter-blok saat diklik tidak sengaja */
+}
+
+/* --- Fitur Responsif --- */
+@media (max-width: 992px) {
+    .logo-meaning-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .logo-info-wrapper {
+        align-items: center;
+    }
+
+    .logo-title-right, .logo-subtitle-right {
+        text-align: center;
+    }
+
+    .logo-tags-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* --- Styling Section Sejarah InfoLearn --- */
+.history-section {
+    width: 100%;
+    background-color: #1e56d4; /* Warna biru solid penuh sesuai gambar */
+    padding: 60px 0 80px 0;
+    text-align: center;
+}
+
+/* Judul Sejarah InfoLearn */
+.history-main-title {
+    color: #ffffff; /* Warna putih kontras */
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+/* Grid Layout untuk 3 Kartu */
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Membagi 3 kolom sama rata */
+    gap: 30px; /* Jarak antar kartu */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Elemen Kartu Putih */
+.history-card {
+    background-color: #ffffff;
+    border-radius: 24px; /* Sudut melengkung halus tebal seperti di gambar */
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px; /* Menjaga tinggi kartu tetap seragam */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Bayangan tipis agar kartu terlihat rapi */
+}
+
+/* Judul di dalam Kartu */
+.card-title-blue {
+    color: #1e56d4; /* Warna biru tema utama */
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Deskripsi di dalam Kartu */
+.card-desc {
+    color: #111111; /* Teks gelap pekat sesuai mockup */
+    font-size: 1.05rem;
+    line-height: 1.5;
+    font-weight: 500;
+    max-width: 280px; /* Membatasi lebar teks agar rapi saat ganti baris */
+}
+
+/* Sorotan khusus teks "InfoLearn" di kartu pertama */
+.text-bold-blue {
+    color: #1e56d4;
+    font-weight: 700;
+}
+
+/* --- Fitur Responsif (Mobile & Tablet) --- */
+@media (max-width: 992px) {
+    .history-grid {
+        grid-template-columns: 1fr; /* Kartu tersusun vertikal ke bawah pada layar kecil */
+        gap: 20px;
+        padding: 0 25px;
+    }
+    
+    .history-main-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .history-card {
+        min-height: auto;
+        padding: 35px 20px;
+    }
+}
+
+.founders-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Judul Pendiri */
+.founders-main-title {
+    color: #111111;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Kontainer Utama Pengatur Baris (3 di atas, 2 di bawah rata tengah) */
+.founders-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Komponen Kartu Pendiri */
+.founder-card {
+    background-color: #ffffff;
+    width: 280px;
+    height: 330px; /* Sedikit dinaikkan agar ruang teks nama di bawah lebih lega */
+    border: 1px solid #eef0f5;
+    border-radius: 24px; /* Sudut melengkung tebal luar sesuai mockup */
+    padding: 16px; /* Jarak konstan antara foto dan tepi kartu */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06); /* Efek bayangan halus */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Bingkai/Wrapper Foto */
+.founder-img-wrapper {
+    width: 100%;
+    height: 240px; /* Tinggi proporsional area foto */
+    border-radius: 16px; /* Membuat sudut foto membulat halus di dalam */
+    overflow: hidden; /* Memotong bagian ujung foto agar mengikuti lengkungan bingkai */
+}
+
+/* Elemen Foto */
+.founder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Menghindari foto gepeng, otomatis terpotong simetris */
+    object-position: center; /* Fokus pemotongan foto di tengah-tengah */
+}
+
+/* Teks Nama Pendiri */
+.founder-name {
+    color: #000000;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Efek Hover Kartu */
+.founder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Fitur Responsif --- */
+@media (max-width: 768px) {
+    .founders-flex-container {
+        gap: 20px;
+    }
+    
+    .founder-card {
+        width: 100%;
+        max-width: 290px; /* Menyesuaikan satu per satu ke bawah di layar HP */
+        height: auto;
+    }
+}
+
+
+footer {
+    width: 100%;
+    background-color: var(--warna-second);
+    display: flex;
+    flex-direction: column; 
+    margin-top: auto;
+}
+
+/* 1. LANTAI ATAS: DIKECILKAN TINGGI & PADDING-NYA */
+footer .footer-content {
+    width: 100%;
+    /* Mengurangi padding vertikal dari 3.5rem menjadi 2rem saja agar tinggi abu-abu menyusut */
+    padding: 2rem 3rem; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+/* 2. BLOK KIRI: LOGO & LANDING PAGE (SKALA DIKECILKAN) */
+footer .footer-content .brand-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.4rem; /* Memadatkan jarak vertikal antar baris */
+}
+
+footer .footer-content .brand-side .footer-logo img {
+    /* FUNGSI KUNCI 1: Mengecilkan skala ukuran logo dari 75px menjadi 50px agar proporsional */
+    width: 50px; 
+    height: auto;
+}
+
+footer .footer-content .brand-side h3 {
+    /* FUNGSI KUNCI 2: Mengecilkan font huruf judul dari 1.4rem menjadi 1.1rem */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* 3. DAFTAR LINK NAVIGASI & KUNCI ANTI-UNDERLINE */
+footer .footer-content ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem; /* Jarak vertikal daftar list dipersempit */
+}
+
+footer .footer-content ul li a {
+    text-decoration: none;
+    /* FUNGSI KUNCI 3: Mengecilkan huruf isi menu menjadi lebih imut dan clean (14px) */
+    font-size: 0.88rem; 
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+/* ==========================================================================
+REVISI UTAMA: BLOKIR HOVER UNDERLINE & GANTI WARNA PRIMER
+   ========================================================================== */
+footer .footer-content ul li a:hover {
+    /* FUNGSI KUNCI 4: Memastikan warna teks berubah menjadi biru primer kebesaran Paduka saat disorot */
+    color: var(--warna-primer); 
+    
+    /* FUNGSI KUNCI 5: Menghapus garis bawah (underline) secara mutlak sesuai perintah Paduka! */
+    text-decoration: none !important; 
+}
+
+/* 4. BLOK KANAN: MEDIA SOSIAL (SKALA DIKECILKAN) */
+footer .footer-content .social-side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    text-align: right; 
+}
+
+footer .footer-content .social-side h3 {
+    /* FUNGSI KUNCI 6: Mengecilkan font judul media sosial menjadi 1.1rem agar seimbang dengan kiri */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+LANTAI BAWAH: STRIP COPYRIGHT YANG LEBIH TIPIS (COMPACT STRIP)
+   ========================================================================== */
+footer .footer-copyright {
+    width: 100%;
+    background-color: #FFFFFF; 
+    /* FUNGSI KUNCI 7: Mengecilkan ketebalan padding vertikal strip putih dari 1.2rem menjadi 0.7rem */
+    padding: 0.7rem 0; 
+    border-top: 1px solid #e5e7eb; 
+    text-align: center; 
+}
+
+footer .footer-copyright p {
+    /* FUNGSI KUNCI 8: Mengecilkan ukuran huruf hak cipta menjadi sangat minimalis (13px) */
+    font-size: 0.8rem; 
+    color: #9ca3af; 
+    font-weight: 500;
+}

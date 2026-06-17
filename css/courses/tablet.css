@@ -1,0 +1,46 @@
+@media screen and (max-width:1024px){
+
+    /* ==================================
+       NAVBAR
+       ================================== */
+
+    nav{
+        padding: 0 1rem;
+    }
+
+    .menu ul{
+        gap: 1rem;
+        font-size: 14px;
+    }
+
+    nav .img img{
+        width: 42px;
+        margin-left: 0;
+    }
+
+    .icon img{
+        width: 40px;
+        margin-right: 0;
+    }
+
+    /* MAIN */
+
+
+    /* FOOTER */
+        /* ==================================
+       FOOTER
+       ================================== */
+
+    footer .footer-content{
+        padding: 1.5rem 2rem;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: 1rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .8rem;
+    }
+}

@@ -1,0 +1,196 @@
+/* === DESKTOP CONTACT US === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --warna-primer: #1A56DB;
+    --warna-hover: #C6E7FF;
+    --warna-second: #EAEAEA;
+    --warna-bg: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    grid-template-areas: 
+    "header"
+    "main";
+    font-family: "Poppins", sans-serif;
+}
+
+/* === NAVBAR == */
+header{
+    top: 0;
+    position: sticky;
+    grid-area: header;
+    background-color: var(--warna-primer);
+    height: 100%;
+}
+nav{
+    display: flex;
+    min-height: 100%;
+    justify-content: space-between;
+    background-color: var(--warna-primer);
+    align-items: center;
+}
+nav i{
+    display: none;
+}
+nav .img img{
+    width: 50px;
+    margin-left: 2.1rem;
+    padding-top: 0.4rem;
+}
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 1.6rem;
+    font-size: 20px;
+}
+.menu ul li a{
+    text-decoration: none;
+}
+.menu ul li a:hover{
+    color: var(--warna-second);
+}
+a:link, a:visited{
+    color: var(--warna-bg);
+    text-decoration: none;
+}
+.icon{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    gap: 0.8rem;
+    color: var(--warna-bg);
+}
+.icon i{
+    cursor: pointer;
+    display: block;
+}
+.icon i:hover{
+    color: var(--warna-second);
+}
+.icon img{
+    width: 50px;
+    border-radius: 50%;
+    padding: 0.2rem 0 0.2rem 0;
+    margin-right: 2.1rem;
+    cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+/* ISIKAN DISINI */
+
+/* ===== FOOTER ===== */
+footer {
+    width: 100%;
+    background-color: var(--warna-second);
+    display: flex;
+    flex-direction: column; 
+    margin-top: auto;
+}
+
+/* 1. LANTAI ATAS: DIKECILKAN TINGGI & PADDING-NYA */
+footer .footer-content {
+    width: 100%;
+    /* Mengurangi padding vertikal dari 3.5rem menjadi 2rem saja agar tinggi abu-abu menyusut */
+    padding: 2rem 3rem; 
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+/* 2. BLOK KIRI: LOGO & LANDING PAGE (SKALA DIKECILKAN) */
+footer .footer-content .brand-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.4rem; /* Memadatkan jarak vertikal antar baris */
+}
+
+footer .footer-content .brand-side .footer-logo img {
+    /* FUNGSI KUNCI 1: Mengecilkan skala ukuran logo dari 75px menjadi 50px agar proporsional */
+    width: 50px; 
+    height: auto;
+}
+
+footer .footer-content .brand-side h3 {
+    /* FUNGSI KUNCI 2: Mengecilkan font huruf judul dari 1.4rem menjadi 1.1rem */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* 3. DAFTAR LINK NAVIGASI & KUNCI ANTI-UNDERLINE */
+footer .footer-content ul {
+    list-style-type: none; 
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem; /* Jarak vertikal daftar list dipersempit */
+}
+
+footer .footer-content ul li a {
+    text-decoration: none;
+    /* FUNGSI KUNCI 3: Mengecilkan huruf isi menu menjadi lebih imut dan clean (14px) */
+    font-size: 0.88rem; 
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+/* ==========================================================================
+   REVISI UTAMA: BLOKIR HOVER UNDERLINE & GANTI WARNA PRIMER
+   ========================================================================== */
+footer .footer-content ul li a:hover {
+    /* FUNGSI KUNCI 4: Memastikan warna teks berubah menjadi biru primer kebesaran Paduka saat disorot */
+    color: var(--warna-primer); 
+    
+    /* FUNGSI KUNCI 5: Menghapus garis bawah (underline) secara mutlak sesuai perintah Paduka! */
+    text-decoration: none !important; 
+}
+
+/* 4. BLOK KANAN: MEDIA SOSIAL (SKALA DIKECILKAN) */
+footer .footer-content .social-side {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    text-align: right; 
+}
+
+footer .footer-content .social-side h3 {
+    /* FUNGSI KUNCI 6: Mengecilkan font judul media sosial menjadi 1.1rem agar seimbang dengan kiri */
+    font-size: 1.1rem; 
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   LANTAI BAWAH: STRIP COPYRIGHT YANG LEBIH TIPIS (COMPACT STRIP)
+   ========================================================================== */
+footer .footer-copyright {
+    width: 100%;
+    background-color: #FFFFFF; 
+    /* FUNGSI KUNCI 7: Mengecilkan ketebalan padding vertikal strip putih dari 1.2rem menjadi 0.7rem */
+    padding: 0.7rem 0; 
+    border-top: 1px solid #e5e7eb; 
+    text-align: center; 
+}
+
+footer .footer-copyright p {
+    /* FUNGSI KUNCI 8: Mengecilkan ukuran huruf hak cipta menjadi sangat minimalis (13px) */
+    font-size: 0.8rem; 
+    color: #9ca3af; 
+    font-weight: 500;
+}

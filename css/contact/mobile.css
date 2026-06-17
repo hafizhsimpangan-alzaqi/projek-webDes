@@ -1,0 +1,293 @@
+@media screen and (max-width:425px){
+
+    /* ==========================================================================
+       REVISI KUNCI 1: SINKRONISASI TINGGI GRID INDUK BODY
+       ========================================================================== */
+    body{
+        overflow-x: hidden;
+        /* FUNGSI KUNCI MUTLAK: Mengubah jatah baris grid desktop (64px) menjadi 60px.
+           Ini menutup ruang hampa 4px secara instan sehingga gap putih lenyap permanen! */
+        grid-template-rows: 60px 1fr; 
+    }
+
+    /* =========================
+       NAVBAR
+       ========================= */
+    header{
+        height: 60px;
+        background-color: var(--warna-primer);
+        position: relative;
+        z-index: 100;
+    }
+
+    nav{
+        padding: 0 .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        background-color: var(--warna-primer);
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .nav-left{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .nav-left .ri-menu-line{
+        display: block;
+        font-size: 1.3rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    nav .img img{
+        width: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon{
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        color: #fff;
+    }
+
+    .icon i{
+        display: block;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .icon img{
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* MAIN */
+    /* ==========================================================================
+       MAIN AREA ADJUSTMENT (OPTIMASI LAYOUT MOBILE SCREEN 425PX)
+       ========================================================================== */
+    main {
+        grid-area: main;
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    .contact-page-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ----------------------------------------------------------------------
+       STYLE 1: HERO BANNER (PENYUSUTAN MAKRO SMARTPHONE)
+       ---------------------------------------------------------------------- */
+    .contact-hero {
+        width: 100%;
+        height: 140px; /* Menyusutkan tinggi hero banner agar pas di layar kecil ponsel */
+        margin-top: -2px; /* Trik sedot piksel babu untuk mengeliminasi gap putih */
+        background-image: 
+            linear-gradient(rgba(6, 6, 6, 0.190), rgba(6, 6, 6, 0.190)), 
+            url('../../assets/Unsoed-FT.png'); 
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-hero h1 {
+        color: var(--warna-bg);
+        font-size: 1.6rem; /* Ukuran huruf h1 disesuaikan tipis minimalis */
+        font-weight: 800;
+        letter-spacing: 0.5px;
+    }
+
+    /* ----------------------------------------------------------------------
+       STYLE 2: BODY LAYOUT (TRANSFORMASI TOTAL MENJADI 1 KOLOM VERTIKAL)
+       ---------------------------------------------------------------------- */
+    .contact-body {
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 1.2rem 3rem 1.2rem; /* Mempersepit padding luar agar input memanjang maksimal */
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+
+    .contact-body .contact-heading {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-body .contact-heading h2 {
+        font-size: 1.4rem; /* Huruf ajakan tengah dikecilkan secara proporsional */
+        font-weight: 700;
+        color: #000000;
+        letter-spacing: -0.3px;
+    }
+
+    /* FUNGSI KUNCI 1: Merombak sistem Grid menyamping menjadi Flexbox susun ke bawah 
+       agar formulir dan peta tidak terjepit gepeng horizontal */
+    .contact-body .contact-grid {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2.5rem; /* Memberikan spasi vertikal yang lega antara form dan kartu peta */
+    }
+
+    /* ----------------------------------------------------------------------
+       COMPONENTS A: FORMULIR INPUT MAHASISWA UNSOED (MOBILE SCALING)
+       ---------------------------------------------------------------------- */
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        width: 100%;
+    }
+
+    .contact-form .form-group {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.3rem;
+    }
+
+    .contact-form .form-group label {
+        font-size: 0.85rem; /* Ukuran font label input disesuaikan untuk smartphone */
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .contact-form .form-group input,
+    .contact-form .form-group textarea {
+        width: 100%;
+        padding: 0.65rem 0.8rem; /* Memadatkan ruang ketebalan kolom input */
+        font-size: 0.85rem;
+        border: 1px solid #9ca3af;
+        border-radius: 8px;
+        outline: none;
+        background-color: var(--warna-bg);
+    }
+
+    .contact-form .form-group textarea {
+        height: 120px; /* Batas tinggi kolom komentar agar tidak memakan ruang gulir */
+        resize: none; /* Matikan fungsi resize manual pada mobile agar tidak merusak layout */
+    }
+
+    .contact-form .btn-submit {
+        width: 100%; /* FUNGSI KUNCI 2: Mengubah tombol submit menjadi full-width agar mudah ditekan jempol */
+        height: 38px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-radius: 8px;
+        background-color: var(--warna-primer);
+        color: var(--warna-bg);
+        border: none;
+        cursor: pointer;
+    }
+
+    /* ----------------------------------------------------------------------
+       COMPONENTS B: KARTU PETA GOOGLE MAPS (MOBILE DESIGN COMPACT)
+       ---------------------------------------------------------------------- */
+    .map-card {
+        width: 100%;
+        background-color: var(--warna-bg);
+        border-radius: 16px; /* Radius sudut disesuaikan untuk mobile viewport */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: auto; /* Membiarkan tinggi kartu membungkus konten secara alami */
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Pembungkus Lensa Gambar Peta Mobile */
+    .map-card .map-image-wrapper {
+        width: 100%;
+        height: 200px; /* FUNGSI KUNCI 3: Mengunci tinggi denah lokasi murni 200px agar tidak melar raksasa */
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .map-card .map-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Boks Detail Informasi Internal Peta Mobile */
+    .map-card .map-info-box {
+        /* FUNGSI KUNCI 4: Memberikan padding bawah 1.5rem untuk menjamin ruang bernapas 
+           tombol Google Maps dari lengkungan sudut border dasar bawah kartu */
+        padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.4rem;
+        height: auto;
+    }
+
+    .map-card .map-info-box h3 {
+        font-size: 1rem; /* Font h3 disesuaikan untuk layar smartphone */
+        font-weight: 700;
+        color: #111827;
+    }
+
+    .map-card .map-info-box p {
+        font-size: 0.78rem; /* Font deskripsi disesuaikan */
+        color: #6b7280;
+        margin-bottom: 1rem; /* Jarak pendorong aman menuju tombol biru */
+    }
+
+    /* Tombol Akses Google Maps Mobile */
+    .map-card .btn-maps {
+        width: 100%;
+        height: 38px;
+        background-color: var(--warna-primer);
+        color: var(--warna-bg) !important;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        margin-top: auto; /* Pengunci linear di lantai terdalam boks */
+    }
+    
+    /* =========================
+       FOOTER
+       ========================= */
+    footer .footer-content{
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    footer .footer-content .social-side{
+        text-align: left;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: .8rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .65rem;
+    }
+
+    footer .footer-copyright p{
+        font-size: .55rem;
+    }
+}

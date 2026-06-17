@@ -1,0 +1,232 @@
+@media (max-width: 768px) {
+    
+    /* --- 1. Navigasi / Header --- */
+  header{
+        height: 60px;
+        background-color: var(--warna-primer);
+        position: relative;
+        z-index: 100;
+    }
+
+    nav{
+        padding: 0 .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        background-color: var(--warna-primer);
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .nav-left{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .nav-left .ri-menu-line{
+        display: block;
+        font-size: 1.3rem;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    nav .img img{
+        width: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .icon{
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        color: #fff;
+    }
+
+    .icon i{
+        display: block;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .icon img{
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+    }
+    /* --- 2. Section About Us / About You --- */
+    .container {
+        padding: 40px 20px; /* Memperkecil padding ruang atas-bawah di HP */
+    }
+    .about-us {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .about-content {
+        text-align: left;
+    }
+    .about-content h1 {
+        font-size: 2.3rem;
+    }
+    .about-content .subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+    .about-content p {
+        font-size: 0.95rem;
+        margin-bottom: 0px;
+        text-align: left; /* Sesuai mockup mobile yang rata kiri */
+    }
+    .about-image {
+        width: 100%;
+        justify-content: center;
+    }
+    .about-image img {
+        border-radius: 20px;
+    }
+
+    /* --- 3. Section Features (Pembelajaran Seumur Hidup & Quiz) --- */
+    .features-section {
+        padding: 40px 0;
+    }
+    .features-grid {
+        grid-template-columns: 1fr; /* Mengubah grid menjadi 1 kolom vertikal */
+        gap: 45px;
+        padding: 0 20px;
+    }
+    .feature-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    .feature-text {
+        font-size: 0.9rem;
+    }
+
+    /* --- 4. Section Makna Logo --- */
+    .logo-meaning-section {
+        padding: 40px 0;
+    }
+    .logo-meaning-grid {
+        grid-template-columns: 1fr; /* Mengubah susunan menjadi atas-bawah */
+        gap: 25px;
+        padding: 0 20px;
+    }
+    .logo-info-wrapper {
+        align-items: flex-start; /* Membuat teks berjejer rata kiri */
+        order: 1; /* Memaksa teks agar muncul di atas kartu logo */
+    }
+    .logo-title-right, .logo-subtitle-right {
+        text-align: left;
+    }
+    .logo-title-right {
+        font-size: 2.2rem;
+    }
+    .logo-subtitle-right {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    .logo-description-text {
+        text-align: left;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+    .logo-tags-container {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+    .logo-tag {
+        width: 31%; /* Membuat 3 kapsul tag muat pas bersisian dalam satu baris */
+        min-width: 90px;
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+    .logo-display-wrapper {
+        order: 2; /* Memindahkan kotak logo emas ke bawah bagian teks tag */
+        width: 100%;
+    }
+    .logo-card-square {
+        max-width: 100%;
+        border-radius: 20px;
+        padding: 25px;
+    }
+
+    /* --- 5. Section Sejarah InfoLearn --- */
+    .history-section {
+        padding: 50px 0;
+    }
+    .history-main-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .history-grid {
+        grid-template-columns: 1fr; /* Kartu sejarah berjejer lurus ke bawah */
+        gap: 15px;
+        padding: 0 20px;
+    }
+    .history-card {
+        min-height: auto;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+    .card-title-blue {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .card-desc {
+        font-size: 0.95rem;
+    }
+
+    /* --- 6. Section Pendiri --- */
+    .founders-section {
+        padding: 50px 0;
+    }
+    .founders-main-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .founders-flex-container {
+        flex-direction: column; /* Kartu alumni/pendiri lurus satu kolom ke bawah */
+        align-items: center;
+        gap: 20px;
+    }
+    .founder-card {
+        width: 100%;
+        max-width: 325px; /* Menjaga ukuran lebar kotak tetap ideal di genggaman layar HP */
+        height: auto;
+        border-radius: 20px;
+    }
+    .founder-img-wrapper {
+        height: 250px;
+    }
+
+    footer .footer-content{
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    footer .footer-content .social-side{
+        text-align: left;
+    }
+
+    footer .footer-content .brand-side h3,
+    footer .footer-content .social-side h3{
+        font-size: .8rem;
+    }
+
+    footer .footer-content ul li a{
+        font-size: .65rem;
+    }
+
+    footer .footer-copyright p{
+        font-size: .55rem;
+    }
+}

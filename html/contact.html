@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>InfoLearn</title>
+    <title>Contact Us</title>
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
-     <link rel="stylesheet" href="../css/contact/desktop.css">
+    <link rel="stylesheet" href="../css/contact/desktop.css">
+    <link rel="stylesheet" href="../css/contact/tablet.css">
+    <link rel="stylesheet" href="../css/contact/mobile.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -23,22 +24,22 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="#" onclick="goToHome()">
                             <p>Home</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#" onclick="goToAbout()">
                             <p>About</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#" onclick="goToCourse()">
                             <p>Course</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="#" onclick="goToContact()">
                             <p>Contact Us</p>
                         </a>
                     </li>
@@ -51,7 +52,65 @@
         </nav>
     </header>
     <main>
-        <article>
+        <article class="contact-page-wrapper">
+
+            <section class="contact-hero">
+                <h1>Contact Us</h1>
+            </section>
+
+            <section class="contact-body">
+
+                <div class="contact-heading">
+                    <h2>Let's Start a Conversation</h2>
+                </div>
+
+                <div class="contact-grid">
+
+                    <form class="contact-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap:</label>
+                            <input type="text" id="nama" placeholder="example123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nim">NIM :</label>
+                            <input type="text" id="nim" placeholder="example123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodi">Program Studi</label>
+                            <input type="text" id="prodi" placeholder="example123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Unsoed:</label>
+                            <input type="email" id="email" placeholder="example123" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Comment:</label>
+                            <textarea id="comment" placeholder="example123" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Enter</button>
+                    </form>
+
+                    <div class="map-card">
+                        <div class="map-image-wrapper">
+                            <img src="../assets/gmap.png" alt="InfoLearn Location Map">
+                        </div>
+                        <div class="map-info-box">
+                            <h3>Lorem ipsum dolor amet</h3>
+                            <p>lorem ipsum dolor</p>
+                            <a href="https://maps.google.com" target="_blank" class="btn-maps">
+                                Google Maps &rsaquo;
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
 
         </article>
         <footer>
@@ -87,6 +146,7 @@
 
         </footer>
     </main>
+    <script src="../js/main.js"></script>
 </body>
 
 </html>
