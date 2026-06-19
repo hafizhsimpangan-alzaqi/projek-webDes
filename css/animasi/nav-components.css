@@ -1,0 +1,178 @@
+.card-login {
+    display: flex;
+    position: absolute;
+    top: 73px; /* melayang presisi di bawah avatar profil */
+    right: 1.2rem; /* Menyandarkan dinding kanan sejajar rapi dengan border avatar */
+    width: 240px; /* Lebar kompak persegi panjang horizontal */
+    background-color: var(--warna-bg);
+    
+    /* Membuat kelengkungan sudut bawah yang imut dan rapi */
+    border-radius: 14px; 
+    border: 1px solid #e5e7eb;
+    border-top: none; /* Melenyapkan border atas agar menyatu alami dengan navbar */
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    z-index: 9999;
+    
+    /* Sembunyikan boks sebelum trigger klik aktif */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* aktif jika Dipanggil oleh event JavaScript toggle */
+.card-login.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Penataan Letak Link Dan Ikon Ri-Login */
+.card-login a {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 8px;
+    width: 100%;
+    padding-left: 1rem;
+    height: 36px;
+    text-decoration: none !important;
+    border-radius: 8px;
+    transition: background-color 0.15s ease;
+}
+
+.card-login a:hover {
+    background-color: #f3f4f6; /* Sorot abu-abu tipis saat kursor masuk */
+}
+
+.card-login a i {
+    font-size: 1.1rem;
+    color: var(--warna-primer) !important; /* Memaksa ikon berwarna biru utama */
+}
+
+.card-login a p {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--warna-primer) !important; /* Memaksa teks bertuliskan 'Login' biru */
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .card-login {
+        right: 1.5rem; /* Merapatkan posisi ke arah avatar tablet */
+        
+        /* Menyusutkan lebar kartu dari 240px menjadi 180px */
+        width: 180px; 
+        border-radius: 12px; /* Radius sudut disesuaikan lebih kecil agar manis */
+        padding: 4px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-login a {
+        height: 32px; /* Memadatkan tinggi baris tombol login */
+        padding-left: 0.8rem;
+        column-gap: 6px;
+    }
+
+    .card-login a i {
+        font-size: 1rem; /* Ikon mengecil seimbang */
+    }
+
+    .card-login a p {
+        font-size: 0.8rem; /* Ukuran huruf teks login menyusut kompak */
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 425px) {
+
+    /* MENU SIDEBAR */
+    .menu {
+        display: block; /* Mengaktifkan kembali pembungkus dari status none desktop */
+        position: fixed;
+        top: 60px; /* Muncul pas tepat di bawah garis bawah boks header bar mobile */
+        left: -100%; /* KUNCI STRUKTUR 1: Sembunyikan laci sejauh 100% keluar layar di sebelah kiri */
+        width: 60%; /* Lebar laci menutup setengah bentang layar horizontal sesuai cuplikan video */
+        height: calc(100vh - 60px);
+        background-color: var(--warna-bg); /* Warna latar belakang putih bersih premium */
+        box-shadow: 10px 0 25px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
+        padding: 1.5rem 1rem;
+        
+        /* Transisi pergerakan geser halus figma video detik 00:02 */
+        transition: left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Jika Aktif dipicu oleh ketukan klik pada hamburger menu */
+    .menu.active-drawer {
+        left: 0; /* Tarik paksa laci kembali menyentuh koordinat nol sisi kiri */
+    }
+
+    /* Penataan Komponen List Di Dalam Laci */
+    .menu ul {
+        flex-direction: column; /* Mengubah barisan horizontal jajaran menu menjadi susunan vertikal kebawah */
+        gap: 0; /* Reset celah gap desktop */
+        width: 100%;
+    }
+
+    .menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #f3f4f6; /* Garis pembatas tipis elegan antar menu */
+    }
+
+    .menu ul li a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0.8rem;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background-color 0.2s;
+    }
+
+    /* Mengubah warna teks menu di mobile menjadi gelap agar kontras di latar putih */
+    .menu ul li a p {
+        color: #374151 !important;
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    /* Efek highlight sorot laci aktif video detik 00:02 */
+    .menu ul li a:hover,
+    .menu ul li a:active {
+        background-color: var(--warna-hover);
+    }
+    
+    .menu ul li a:hover p {
+        color: var(--warna-primer) !important;
+    }
+
+    /* CARD LOGIN DROPDOWN */
+    .card-login {
+        /* Menyesuaikan tinggi tumpuan top mengikuti sasis header mobile */
+        top: 63px; 
+        right: 1rem; /* Merapatkan posisi di bawah lingkaran avatar ponsel */
+
+        width: 120px; 
+        border-radius: 12px; /* Lengkungan sudut bawah dibuat imut */
+        padding: 4px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-login a {
+        height: 30px; /* Baris tombol login memadat maksimal khusus mobile */
+        padding-left: 0.6rem; /* Jarak kiri dirapatkan */
+        column-gap: 5px; /* Sela antara ikon dan teks dipersempit */
+    }
+
+    .card-login a i {
+        font-size: 0.9rem; /* Ikon mengecil proporsional */
+    }
+
+    .card-login a p {
+        font-size: 0.75rem; /* Font teks 'Login' mengecil imut menyesuaikan ruang */
+    }
+}

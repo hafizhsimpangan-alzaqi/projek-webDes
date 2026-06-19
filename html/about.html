@@ -5,9 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
-    <link rel="stylesheet" href="../css/about us/desktop.css" />
-    <link rel="stylesheet" href="../css/about us/tablet.css" />
-    <link rel="stylesheet" href="../css/about us/mobile.css" />
+    <link rel="stylesheet" href="/css/about/desktop.css" />
+    <link rel="stylesheet" href="/css/about/tablet.css" />
+    <link rel="stylesheet" href="/css/about/mobile.css" />
+    <link rel="stylesheet" href="/css/animasi/my-aos.css">
+    <link rel="stylesheet" href="/css/animasi/nav-components.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -15,12 +17,12 @@
     <header>
         <nav>
             <div class="nav-left">
-                <i class="ri-menu-line"></i>
+                <i class="ri-menu-line" id="menuToggle"></i>
                 <div class="img">
-                    <img src="../assets/Logo.svg" alt="">
+                    <img src="/assets/Logo.svg" alt="">
                 </div>
             </div>
-            <div class="menu">
+            <div class="menu" id="mobileMenu">
                 <ul>
                     <li>
                         <a href="#" onclick="goToHome()">
@@ -46,64 +48,88 @@
             </div>
             <div class="icon">
                 <i class="ri-notification-fill"></i>
-                <img src="../assets/profil.jpg" alt="">
+                <img src="/assets/profil.jpg" alt="" id="profileTrigger">
+
+                <div class="card-login" id="profileDropdown">
+                    <a href="#" onclick="goToLogin()">
+                        <i class="ri-login-box-line"></i>
+                        <p>Login</p>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
-    <main> 
-        <section class="about-us container">
+    <main>
+        <section class="about-us container" data-my-aos="fade-up" data-my-aos-duration="2000">
             <div class="about-content">
                 <h1>About Us</h1>
                 <h2 class="subtitle">InfoLearn</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged.</p>
                 <button class="btn-primary">What can you get?</button>
             </div>
-            <div class="about-image">
-                <img src="../assets/belajar.jpeg" alt="Learning Process">
+            <div class="about-image" data data-my-aos="fade-down" data-my-aos-duration="2000">
+                <img src="/assets/belajar.jpeg" alt="Learning Process">
             </div>
         </section>
         <section class="features-section">
             <div class="container features-grid">
-                
-                <div class="feature-card">
+
+                <div class="feature-card" data-my-aos="fade-right" data-my-aos-duration="2000">
                     <div class="feature-icon">
-                        <i class="ri-graduation-cap-fill"></i>
+                       <i class="ri-lightbulb-fill"></i>
                     </div>
-                    <h3 class="feature-title">Pembelajaran Seumur Hidup</h3>
+                    <h3 class="feature-title">Visi</h3>
                     <p class="feature-text">
-                        the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum
+                        the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to
+                        make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also
+                        the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks
+                        to these sheets and more recently with desktop publishing software including versions of Lorem
+                        Ipsum
                     </p>
                 </div>
 
-                <div class="feature-card">
+                <div class="feature-card" data-my-aos="fade-left" data-my-aos-duration="2000">
                     <div class="feature-icon">
-                        <i class="ri-graduation-cap-fill"></i>
+                        <i class="ri-focus-2-line"></i>
                     </div>
-                    <h3 class="feature-title">Quiz</h3>
+                    <h3 class="feature-title">Misi</h3>
                     <p class="feature-text">
-                        the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum
+                        the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to
+                        make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also
+                        the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks
+                        to these sheets and more recently with desktop publishing software including versions of Lorem
+                        Ipsum
                     </p>
                 </div>
 
             </div>
         </section>
-                <section class="logo-meaning-section">
-            <div class="container logo-meaning-grid">
-                
+        <section class="logo-meaning-section">
+            <div class="container logo-meaning-grid" data-my-aos="fade-down" data-my-aos-duration="2000">
+
                 <div class="logo-display-wrapper">
                     <div class="logo-card-square">
-                        <img src="../assets/Logo.svg" alt="Logo InfoLearn" class="logo infolearn">
+                        <img src="/assets/Logo.svg" alt="Logo InfoLearn" class="logo infolearn">
                     </div>
                 </div>
 
                 <div class="logo-info-wrapper">
                     <h2 class="logo-title-right">Makna Logo</h2>
                     <h3 class="logo-subtitle-right">InfoLearn</h3>
-                    
+
                     <p class="logo-description-text">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley,
+                        the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to
+                        make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also
+                        the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks
+                        to these sheets and more recently with desktop publishing software including versions of Lorem
+                        Ipsum
                     </p>
-                    
+
                     <div class="logo-tags-container">
                         <span class="logo-tag">Edukatif</span>
                         <span class="logo-tag">Interaktif</span>
@@ -112,16 +138,17 @@
                 </div>
             </div>
         </section>
-        <section class="history-section">
+        <section class="history-section" data-my-aos="fade-up" data-my-aos-duration="2000">
             <div class="container">
                 <h2 class="history-main-title">Sejarah InfoLearn</h2>
-                
+
                 <div class="history-grid">
-                    
+
                     <div class="history-card">
                         <h3 class="card-title-blue">Berdiri</h3>
                         <p class="card-desc">
-                            <span class="text-bold-blue">InfoLearn</span> Berdiri pada 8 Juni 2026 Oleh 5 anak muda asal unsoed
+                            <span class="text-bold-blue">InfoLearn</span> Berdiri pada 8 Juni 2026 Oleh 5 anak muda asal
+                            unsoed
                         </p>
                     </div>
 
@@ -141,40 +168,40 @@
         <section class="founders-section">
             <div class="container">
                 <h2 class="founders-main-title">Pendiri</h2>
-                
+
                 <div class="founders-flex-container">
-                    
-                    <div class="founder-card">
+
+                    <div class="founder-card" data-my-aos="fade-right" data-my-aos-duration="2000">
                         <div class="founder-img-wrapper">
-                            <img src="../assets/aldhi.jpeg" alt="Aldhi" class="founder-img">
+                            <img src="/assets/aldhi.jpeg" alt="Aldhi" class="founder-img">
                         </div>
                         <h4 class="founder-name">Aldhi</h4>
                     </div>
 
-                    <div class="founder-card">
+                    <div class="founder-card" data-my-aos="fade-left" data-my-aos-duration="2000">
                         <div class="founder-img-wrapper">
-                            <img src="../assets/hafizh.jpeg" alt="Hafizh" class="founder-img">
+                            <img src="/assets/hafizh.jpeg" alt="Hafizh" class="founder-img">
                         </div>
                         <h4 class="founder-name">Hafizh</h4>
                     </div>
 
-                    <div class="founder-card">
+                    <div class="founder-card" data-my-aos="fade-right" data-my-aos-duration="2000">
                         <div class="founder-img-wrapper">
-                            <img src="../assets/akbar.jpeg" alt="Akbar" class="founder-img">
+                            <img src="/assets/akbar.jpeg" alt="Akbar" class="founder-img">
                         </div>
                         <h4 class="founder-name">Akbar</h4>
                     </div>
 
-                    <div class="founder-card">
+                    <div class="founder-card" data-my-aos="fade-left" data-my-aos-duration="2000">
                         <div class="founder-img-wrapper">
-                            <img src="../assets/hafid.jpeg" alt="Hafid" class="founder-img">
+                            <img src="/assets/hafid.jpeg" alt="Hafid" class="founder-img">
                         </div>
                         <h4 class="founder-name">Hafid</h4>
                     </div>
 
-                    <div class="founder-card">
+                    <div class="founder-card" data-my-aos="fade-up" data-my-aos-duration="2000">
                         <div class="founder-img-wrapper">
-                            <img src="../assets/wisnu.jpeg" alt="Wisnu" class="founder-img">
+                            <img src="/assets/wisnu.jpeg" alt="Wisnu" class="founder-img">
                         </div>
                         <h4 class="founder-name">Wisnu</h4>
                     </div>
@@ -186,9 +213,9 @@
 
         <footer>
             <div class="footer-content">
-                <div class="brand-side">
+                <div class="brand-side" data-my-aos="fade-right" data-my-aos-duration="2000">
                     <div class="footer-logo">
-                        <img src="../assets/Logo.svg" alt="Logo InfoLearn">
+                        <img src="/assets/Logo.svg" alt="Logo InfoLearn">
                     </div>
                     <h3>Landing Page</h3>
                     <ul>
@@ -197,7 +224,7 @@
                         <li><a href="">Contat Us</a></li>
                     </ul>
                 </div>
-                <div class="social-side">
+                <div class="social-side" data-my-aos="fade-left" data-my-aos-duration="2000">
                     <h3>Media Sosial</h3>
                     <ul>
                         <li><a href="">Instagram</a></li>
@@ -213,7 +240,7 @@
 
 
     </main>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

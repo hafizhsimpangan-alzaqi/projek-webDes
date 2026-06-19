@@ -1,8 +1,4 @@
 @media screen and (max-width:425px){
-
-    /* ==========================================================================
-       REVISI KUNCI 1: SINKRONISASI TINGGI GRID INDUK BODY
-       ========================================================================== */
     body{
         overflow-x: hidden;
         /* FUNGSI KUNCI MUTLAK: Mengubah jatah baris grid desktop (64px) menjadi 60px.
@@ -29,9 +25,9 @@
         background-color: var(--warna-primer);
     }
 
-    .menu{
+    /* .menu{
         display: none;
-    }
+    } */
 
     .nav-left{
         display: flex;
@@ -74,9 +70,6 @@
         padding: 0;
     }
 
-    /* ==========================================================================
-       REVISI KUNCI 2: HERO KONTEN-1 (MENYATU SEMPURNA TANPA MARGIN MINUS KAKU)
-       ========================================================================== */
     main {
         margin-top: 0;
         padding-top: 0;
@@ -126,9 +119,6 @@
         line-height: 1.4;
     }
 
-    /* ==========================================================================
-       TOMBOL HERO DINAMIS (MEMPERTAHANKAN TINGKAT KERAPIAN FIGMA PADUKA)
-       ========================================================================== */
     .container-1 .btn {
         display: flex;
         justify-content: center;
@@ -151,9 +141,6 @@
         white-space: nowrap; 
     }
 
-    /* =========================
-       ABOUT
-       ========================= */
     .container-2{
         height: auto;
         display: flex;
@@ -207,9 +194,6 @@
         background-position: center;
     }
 
-    /* =========================
-       SECTION TITLE
-       ========================= */
     .container-3,
     .container-4{
         padding: 1rem;
@@ -230,9 +214,6 @@
         font-size: .65rem;
     }
 
-    /* =========================
-       KELAS UMUM
-       ========================= */
     .container-3 .course{
         grid-template-columns: 1fr;
         gap: 12px;
@@ -268,9 +249,6 @@
         padding: .8rem;
     }
 
-    /* =========================
-       KELAS KHUSUS
-       ========================= */
     .container-4{
         grid-template-columns: 1fr;
     }
@@ -279,9 +257,7 @@
         grid-column: auto;
     }
 
-    /* =========================
-       FOOTER
-       ========================= */
+    /* FOOTER */
     footer .footer-content{
         flex-direction: column;
         gap: 1.5rem;

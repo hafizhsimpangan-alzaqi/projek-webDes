@@ -1,119 +1,277 @@
-:root{
-    --warna-utama:#1A56DB;
-    --warna-kedua:#FFFFFF;
-    --warna-bg:#EAEAEA;
-    --shadow-utama:1px 1px 13px rgba(0, 0, 0, 0.3);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --warna-primer: #1A56DB;
+    --warna-hover: #1244b9;
+    --warna-second: #EAEAEA; /* Mengunci abu-abu elegan untuk area luar kartu login */
+    --warna-bg: #FFFFFF;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: sans-serif;
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--warna-second);
 }
 
-main{
+/* TEMPLATE POPUP */
+.modal{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.open{
+    opacity: 1;
+    z-index: 999;
+}
+
+.card-modal{
+    border-radius: 24px; 
+    background-color: var(--warna-bg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 440px;
+    height: auto;
+    padding: 3.5rem 2.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   STRUKTUR DESKTOP MURNI (WIDTH > 1024PX)
+   ========================================================================== */
+main {
     min-height: 100vh;
     display: flex;
-    justify-content: safe center;
+    justify-content: center;
     align-items: center;
-    background: var(--warna-bg);
-}
-
-.card{
-    width: 568px;
-    height: 762px;
-    background-color: var(--warna-kedua);
-    border-radius: 40px;
-    box-shadow: var(--shadow-utama);
-    padding: 2.3rem;
-}
-
-.img{
-    display: flex;
-    justify-content: safe center;
-    align-items: center;
-    margin-top: 73px; /* bisa di sesuaikan */
-    margin-bottom: 27px; /* bisa di sesuaikan */
-}
-
-.img img{
-    width: 112px;
-}
-
-fieldset{
-    margin-top: 38px;
-}
-
-fieldset input{
+    background: var(--warna-second);
     padding: 20px;
 }
 
-.card form button{
-    margin-top: 38px;
+.card {
+    border-radius: 24px; 
+    background-color: var(--warna-bg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 440px;
+    height: auto;
+    padding: 3.5rem 2.8rem;
+    display: flex;
+    flex-direction: column;
 }
 
-/* tampilan responsif untuk mobile tablet 1024px */
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.img img {
+    width: 112px;
+    height: auto;
+}
+
+.card form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* RESET STRUKTUR FIELDSET AGAR MINIMALIS DAN PROPORSIONAL */
+fieldset.fieldset {
+    border: none;
+    margin-top: 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    width: 100%;
+}
+
+fieldset.fieldset legend.fieldset-legend {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #111827;
+    padding: 0;
+}
+
+fieldset.fieldset input.input {
+    width: 100%;
+    height: 54px; /* Ketebalan tinggi input premium desktop */
+    padding: 0 1.2rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #374151;
+    background-color: var(--warna-bg);
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+fieldset.fieldset input.input::placeholder {
+    color: #9ca3af;
+    opacity: 0.7;
+}
+
+fieldset.fieldset input.input:focus {
+    border-color: var(--warna-primer);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.15);
+}
+
+/* STYLING BUTTON LOGIN UTAMA */
+.card form button.btn-primary {
+    margin-top: 38px;
+    width: 100%;
+    height: 44px;
+    background-color: var(--warna-primer);
+    color: var(--warna-bg);
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: lowercase; /* Memaksa teks tertulis huruf kecil murni "login" */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card form button.btn-primary:hover {
+    background-color: var(--warna-hover);
+}
+
+.card form button.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-inner h2{
+    margin: 0;
+}
+
+.modal-inner p{
+    line-height: 24px;
+    margin: 10px 0;
+}
+
+/* ==========================================================================
+   LAPISAN RESPONSIF TABLET INTERMEDIATE (MAX-WIDTH: 1024PX)
+   ========================================================================== */
 @media (max-width: 1024px) {
-    .card{
-        width: 538px;
-        height: 694px;
+    .card {
+        width: 360px; /* Menyusutkan lebar kartu agar proporsional di tablet */
+        padding: 3rem 2rem;
     }
-    .img{
-        margin-top: 78px;
-        margin-bottom: 21px;
+    
+    .img {
+        margin-top: 15px;
+        margin-bottom: 25px;
     }
-    .img img{
+    
+    .img img {
         width: 87px;
     }
-    fieldset{
+    
+    fieldset.fieldset {
+        margin-top: 20px;
+    }
+    
+    fieldset.fieldset legend.fieldset-legend {
+        font-size: 0.88rem;
+    }
+    
+    fieldset.fieldset input.input {
+        height: 46px; /* Tinggi input diredam untuk resolusi tablet */
+        font-size: 0.88rem;
+        border-radius: 8px;
+    }
+    
+    .card form button.btn-primary {
         margin-top: 30px;
-        font-size: 14px;
-    }
-    fieldset input{
-        height: 49px;
-        font-size: 14px;
-    }
-    fieldset legend{
-        font-size: 14px;
-    }
-    .card form button{
-        margin-top: 34px;
-        height: 49px;
-        font-size: 14px;
+        height: 42px;
+        font-size: 0.88rem;
     }
 }
 
-/* tampilan responsif untuk mobile 425px */
+/* ==========================================================================
+   LAPISAN RESPONSIF MOBILE POCKET SCREEN (MAX-WIDTH: 425px)
+   ========================================================================== */
 @media (max-width: 425px) {
-    .card{
-        width: 362px;
-        height: 480px;
-        margin: 20px;
+    main {
+        padding: 15px;
     }
-    .img{
-        margin-top: 34px;
-        margin-bottom: 16px;
+
+    .card {
+        width: 100%;
+        max-width: 330px; /* Menyelaraskan dimensi kartu sekecil figma mobile */
+        padding: 2.2rem 1.5rem;
+        border-radius: 24px; /* Konsisten mempertahankan 24px rounded titah Paduka */
     }
-    .img img{
+    
+    .img {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .img img {
         width: 71px;
     }
-    fieldset{
-        margin-top: 21px;
-        font-size: 14px;
+    
+    fieldset.fieldset {
+        margin-top: 16px;
     }
-    fieldset input{
-        height: 34px;
-        font-size: 14px;
+    
+    fieldset.fieldset legend.fieldset-legend {
+        font-size: 0.85rem;
     }
-    fieldset legend{
-        font-size: 14px;
+    
+    fieldset.fieldset input.input {
+        height: 38px; /* Tinggi input kompak murni mobile figma */
+        font-size: 0.85rem;
+        padding: 0 0.8rem;
+        border-radius: 8px;
     }
-    .card form button{
-        margin-top: 23px;
-        height: 34px;
-        font-size: 14px;
+    
+    .card form button.btn-primary {
+        margin-top: 24px;
+        height: 36px;
+        font-size: 0.85rem;
+        border-radius: 6px;
     }
 }
+

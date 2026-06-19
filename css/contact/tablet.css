@@ -1,9 +1,7 @@
 /* TABLET CONTACT US */
 @media screen and (max-width:1024px){
 
-    /* ==================================
-       NAVBAR
-       ================================== */
+    /* NAVBAR */
 
     nav{
         padding: 0 1rem;
@@ -37,9 +35,6 @@ main {
         flex-direction: column;
     }
 
-    /* ----------------------------------------------------------------------
-       STYLE 1: HERO BANNER TABLET ADJUSTMENT
-       ---------------------------------------------------------------------- */
     .contact-hero {
         width: 100%;
         height: 200px; 
@@ -61,9 +56,6 @@ main {
         letter-spacing: 1px;
     }
 
-    /* ----------------------------------------------------------------------
-       STYLE 2: BODY LAYOUT GRID FOR TABLET (KOREKSI CELL SPASI)
-       ---------------------------------------------------------------------- */
     .contact-body {
         width: 100%;
         max-width: 100%; 
@@ -90,14 +82,10 @@ main {
         grid-template-columns: 1.05fr 0.95fr; 
         column-gap: 2.5rem; 
         
-        /* FUNGSI KUNCI 1: Mengembalikan ke 'stretch' agar tinggi total kartu kanan 
-           otomatis memanjang ke bawah lurus sejajar dengan ekor tombol formulir kiri Paduka! */
+        /* Mengembalikan ke 'stretch' agar tinggi total kartu kanan otomatis memanjang ke bawah lurus sejajar dengan ekor tombol formulir kiri Paduka! */
         align-items: stretch; 
     }
 
-    /* ----------------------------------------------------------------------
-       COMPONENTS A: FORMULIR INPUT MAHASISWA (TABLET SCALING)
-       ---------------------------------------------------------------------- */
     .contact-form {
         display: flex;
         flex-direction: column;
@@ -136,9 +124,6 @@ main {
         cursor: pointer;
     }
 
-/* ----------------------------------------------------------------------
-       COMPONENTS B: KARTU PETA GOOGLE MAPS (REVISI CLIPPING & PADDING KANAN)
-       ---------------------------------------------------------------------- */
     .map-card {
         width: 100%;
         background-color: var(--warna-bg);
@@ -148,24 +133,17 @@ main {
         flex-direction: column;
         border: 1px solid #e5e7eb;
         box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-        
-        /* Mengembalikan ke tinggi fluid 100% mengikuti klem stretch induk grid tablet 
-           agar sejajar lurus dengan tombol Enter di formulir kiri */
         height: 80%; 
         margin-top: 0; 
     }
 
-    /* Penyesuaian Lensa Gambar Denah Peta Tablet */
- /* ----------------------------------------------------------------------
-       COMPONENTS B: KARTU PETA GOOGLE MAPS (REVISI ANTARMUKA TABLET PRESET)
-       ---------------------------------------------------------------------- */
     .map-card {
         width: 100%;
         background-color: var(--warna-bg);
         border-radius: 20px; 
         overflow: hidden;
         
-        /* FUNGSI KUNCI 1: Mengaktifkan kendali Flexbox vertikal satu arah pada sasis kartu */
+        /* Mengaktifkan kendali Flexbox vertikal satu arah pada sasis kartu */
         display: flex;
         flex-direction: column;
         
@@ -180,11 +158,6 @@ main {
     /* Penyesuaian Lensa Gambar Denah Peta Tablet */
     .map-card .map-image-wrapper {
         width: 100%;
-        
-        /* FUNGSI KUNCI 2: Mengubah flex-grow menjadi auto (tidak merenggang liar) 
-           dan mengunci tinggi maksimal gambar secara solid pada angka 280px.
-           Langkah ini memberikan batasan mutlak bagi gambar agar tidak melar raksasa 
-           dan tidak menindas elemen teks di bawahnya! */
         flex-grow: 1;
         min-height: 240px;
         max-height: 280px; 
@@ -193,21 +166,18 @@ main {
 
     .map-card .map-image-wrapper img {
         width: 100%;
-        /* FUNGSI KUNCI 3: Mengunci tinggi gambar murni 100% mengisi penuh penampang wrapper 
-           tanpa menyisakan ruang transparan kosong yang memicu kebocoran layout */
         height: 100%; 
         object-fit: cover;
         object-position: center;
     }
 
-    /* KOTAK INFORMASI INTERNAL (DENGAN MANAJEMEN FLEXBOX MANDIRI) */
     .map-card .map-info-box {
-        /* FUNGSI KUNCI 4: Mengaktifkan flexbox internal khusus di dalam boks teks */
+        /* Mengaktifkan flexbox internal khusus di dalam boks teks */
         display: flex;
         flex-direction: column;
         row-gap: 0.5rem;
         
-        /* FUNGSI KUNCI 5: Mengubah flex-shrink menjadi grow agar boks informasi 
+        /* Mengubah flex-shrink menjadi grow agar boks informasi 
            mengambil alih sisa tinggi bawah kartu secara fleksibel dan lapang */
         flex-grow: 1;
         flex-shrink: 1;
@@ -222,7 +192,7 @@ main {
         font-weight: 700;
         color: #111827;
         margin: 0;
-        /* FUNGSI KUNCI 6: Memaksa teks judul membersihkan diri dari tumpukan elemen atas */
+        /* Memaksa teks judul membersihkan diri dari tumpukan elemen atas */
         clear: both; 
     }
 
@@ -232,7 +202,6 @@ main {
         margin-bottom: 1.2rem; 
     }
 
-    /* Tombol Biru Google Maps (MENGUNCI PRESISI DI DASAR KARTU DENGAN PADDING AMAN) */
     .map-card .btn-maps {
         width: 100%;
         height: 36px; 
@@ -248,7 +217,7 @@ main {
         text-decoration: none;
         transition: background-color 0.2s;
         
-        /* FUNGSI KUNCI 7: Magnet vertikal otomatis yang mengunci tombol Google Maps 
+        /* Magnet vertikal otomatis yang mengunci tombol Google Maps 
            menetap abadi di lantai paling dasar kartu, menciptakan ruang bernapas yang proporsional */
         margin-top: auto; 
     }
@@ -258,9 +227,6 @@ main {
     }
 
     /* FOOTER */
-        /* ==================================
-       FOOTER
-       ================================== */
 
     footer .footer-content{
         padding: 1.5rem 2rem;

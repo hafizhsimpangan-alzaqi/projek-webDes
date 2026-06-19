@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Popup</title>
+</head>
+<style>
+    /* TEMPLATE POPUP */
+    .modal {
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: all 0.3s ease-in-out;
+        z-index: -1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal.open {
+        opacity: 1;
+        z-index: 999;
+    }
+
+    .card-modal {
+        border-radius: 24px;
+        background-color: var(--warna-bg);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        width: 440px;
+        height: auto;
+        padding: 3.5rem 2.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+    <button id="openModal">Klik Popup</button>
+    <div class="modal" id="modal">
+        <div class="card-modal">
+            <button id="closeModal">Close</button>
+        </div>
+    </div>
+    <script>
+        const openBtn = document.getElementById("openModal")
+        const closeBtn = document.getElementById("closeModal")
+        const modal = document.getElementById("modal")
+
+        openBtn.addEventListener("click", () => {
+            modal.classList.add("open")
+        })
+
+        closeBtn.addEventListener("click", () => {
+            modal.classList.remove("open")
+        })
+    </script>
+</body>
+
+</html>

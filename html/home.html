@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoLearn</title>
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
-     <link rel="stylesheet" href="../css/landingpage/desktop.css">
-     <link rel="stylesheet" href="../css/landingpage/tablet.css">
-     <link rel="stylesheet" href="../css/landingpage/mobile.css">
+    <link rel="stylesheet" href="/css/landingpage/desktop.css">
+    <link rel="stylesheet" href="/css/landingpage/tablet.css">
+    <link rel="stylesheet" href="/css/landingpage/mobile.css">
+    <link rel="stylesheet" href="/css/animasi/my-aos.css">
+    <link rel="stylesheet" href="/css/animasi/nav-components.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -16,12 +17,12 @@
     <header>
         <nav>
             <div class="nav-left">
-                <i class="ri-menu-line"></i>
+                <i class="ri-menu-line" id="menuToggle"></i>
                 <div class="img">
-                    <img src="../assets/Logo.svg" alt="">
+                    <img src="/assets/Logo.svg" alt="">
                 </div>
             </div>
-            <div class="menu">
+            <div class="menu" id="mobileMenu">
                 <ul>
                     <li>
                         <a href="#" onclick="goToHome()">
@@ -47,22 +48,29 @@
             </div>
             <div class="icon">
                 <i class="ri-notification-fill"></i>
-                <img src="../assets/profil.jpg" alt="">
+                <img src="/assets/profil.jpg" alt="" id="profileTrigger">
+
+                <div class="card-login" id="profileDropdown">
+                    <a href="#" onclick="goToLogin()">
+                        <i class="ri-login-box-line"></i>
+                        <p>Login</p>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
     <main>
         <article>
             <div class="container-1">
-                <div class="wellcome">
+                <div class="wellcome" data-my-aos="fade-down" data-my-aos-duration="2000">
                     <h1>Selamat Datang Di</h1>
                     <h1 class="infolearn">InfoLearn</h1>
                 </div>
-                <div class="kata-kata">
+                <div class="kata-kata" data-my-aos="fade-up" data-my-aos-duration="2000">
                     <p>Temukan berbagai kursus dan materi pembelajaran untuk mengembangkan keterampilan serta memperluas
                         wawasanmu kapan saja dan di mana saja.</p>
                 </div>
-                <div class="btn">
+                <div class="btn" data-my-aos="fade-up" data-my-aos-duration="2000">
                     <button>
                         Explor Courses
                         <i class="ri-arrow-right-line"></i>
@@ -71,7 +79,7 @@
                 </div>
             </div>
             <div class="container-2">
-                <div class="about-us">
+                <div class="about-us" data-my-aos="fade-right" data-my-aos-duration="2000">
                     <h2>About Us</h2>
                     <h2 class="infolearn">InfoLearn</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis molestias impedit ipsum?
@@ -89,13 +97,13 @@
                     </p>
                     <button>About Us</button>
                 </div>
-                <div class="card-about">
+                <div class="card-about" data-my-aos="fade-left" data-my-aos-duration="2000">
                     <div class="card">
 
                     </div>
                 </div>
             </div>
-            <div class="container-3">
+            <div class="container-3" data-my-aos="fade-down" data-my-aos-duration="2000">
                 <div class="title">
                     <h2>Kelas Umum</h2>
                     <div class="learn-more">
@@ -105,7 +113,7 @@
                 </div>
                 <div class="course">
                     <div class="card-course course-recomend">
-                        <img src="../assets/networking.jpg" alt="">
+                        <img src="/assets/networking.jpg" alt="">
                         <div class="img">
                         </div>
                         <div class="course-detail">
@@ -122,7 +130,7 @@
                         </div>
                     </div>
                     <div class="card-course">
-                        <img src="../assets/networking.jpg" alt="">
+                        <img src="/assets/networking.jpg" alt="">
                         <div class="img">
                         </div>
                         <div class="course-detail">
@@ -139,7 +147,7 @@
                         </div>
                     </div>
                     <div class="card-course">
-                        <img src="../assets/networking.jpg" alt="">
+                        <img src="/assets/networking.jpg" alt="">
                         <div class="img">
                         </div>
                         <div class="course-detail">
@@ -156,7 +164,7 @@
                         </div>
                     </div>
                     <div class="card-course">
-                        <img src="../assets/networking.jpg" alt="">
+                        <img src="/assets/networking.jpg" alt="">
                         <div class="img">
                         </div>
                         <div class="course-detail">
@@ -173,7 +181,7 @@
                         </div>
                     </div>
                     <div class="card-course">
-                        <img src="../assets/networking.jpg" alt="">
+                        <img src="/assets/networking.jpg" alt="">
                         <div class="img">
                         </div>
                         <div class="course-detail">
@@ -213,7 +221,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-4">
+            <div class="container-4" data-my-aos="fade-up" data-my-aos-duration="2000">
                 <div class="title">
                     <h2>Kelas Khusus</h2>
                     <div class="learn-more">
@@ -222,7 +230,7 @@
                     </div>
                 </div>
                 <div class="card-course">
-                    <img src="../assets/networking.jpg" alt="">
+                    <img src="/assets/networking.jpg" alt="">
                     <div class="img">
                     </div>
                     <div class="course-detail">
@@ -239,7 +247,7 @@
                     </div>
                 </div>
                 <div class="card-course">
-                    <img src="../assets/networking.jpg" alt="">
+                    <img src="/assets/networking.jpg" alt="">
                     <div class="img">
                     </div>
                     <div class="course-detail">
@@ -256,7 +264,7 @@
                     </div>
                 </div>
                 <div class="card-course">
-                    <img src="../assets/networking.jpg" alt="">
+                    <img src="/assets/networking.jpg" alt="">
                     <div class="img">
                     </div>
                     <div class="course-detail">
@@ -273,7 +281,7 @@
                     </div>
                 </div>
                 <div class="card-course">
-                    <img src="../assets/networking.jpg" alt="">
+                    <img src="/assets/networking.jpg" alt="">
                     <div class="img">
                     </div>
                     <div class="course-detail">
@@ -295,9 +303,9 @@
 
             <div class="footer-content">
 
-                <div class="brand-side">
+                <div class="brand-side" data-my-aos="fade-right" data-my-aos-duration="2000">
                     <div class="footer-logo">
-                        <img src="../assets/Logo.svg" alt="Logo InfoLearn">
+                        <img src="/assets/Logo.svg" alt="Logo InfoLearn">
                     </div>
                     <h3>Landing Page</h3>
                     <ul>
@@ -307,7 +315,7 @@
                     </ul>
                 </div>
 
-                <div class="social-side">
+                <div class="social-side" data-my-aos="fade-left" data-my-aos-duration="2000">
                     <h3>Media Sosial</h3>
                     <ul>
                         <li><a href="">Instagram</a></li>
@@ -324,7 +332,7 @@
 
         </footer>
     </main>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>

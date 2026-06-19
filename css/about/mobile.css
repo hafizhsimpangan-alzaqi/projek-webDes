@@ -17,9 +17,9 @@
         background-color: var(--warna-primer);
     }
 
-    .menu{
+    /* .menu{
         display: none;
-    }
+    } */
 
     .nav-left{
         display: flex;
@@ -61,7 +61,7 @@
         margin: 0;
         padding: 0;
     }
-    /* --- 2. Section About Us / About You --- */
+
     .container {
         padding: 40px 20px; /* Memperkecil padding ruang atas-bawah di HP */
     }
@@ -93,7 +93,6 @@
         border-radius: 20px;
     }
 
-    /* --- 3. Section Features (Pembelajaran Seumur Hidup & Quiz) --- */
     .features-section {
         padding: 40px 0;
     }
@@ -110,7 +109,6 @@
         font-size: 0.9rem;
     }
 
-    /* --- 4. Section Makna Logo --- */
     .logo-meaning-section {
         padding: 40px 0;
     }
@@ -158,7 +156,6 @@
         padding: 25px;
     }
 
-    /* --- 5. Section Sejarah InfoLearn --- */
     .history-section {
         padding: 50px 0;
     }
@@ -184,27 +181,12 @@
         font-size: 0.95rem;
     }
 
-    /* --- 6. Section Pendiri --- */
     .founders-section {
         padding: 50px 0;
     }
     .founders-main-title {
         font-size: 1.8rem;
         margin-bottom: 30px;
-    }
-    .founders-flex-container {
-        flex-direction: column; /* Kartu alumni/pendiri lurus satu kolom ke bawah */
-        align-items: center;
-        gap: 20px;
-    }
-    .founder-card {
-        width: 100%;
-        max-width: 325px; /* Menjaga ukuran lebar kotak tetap ideal di genggaman layar HP */
-        height: auto;
-        border-radius: 20px;
-    }
-    .founder-img-wrapper {
-        height: 250px;
     }
 
     footer .footer-content{

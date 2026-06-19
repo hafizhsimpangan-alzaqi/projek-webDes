@@ -1,0 +1,35 @@
+/* Aturan Dasar untuk Semua Elemen yang Menggunakan Animasi Kita */
+[data-my-aos] {
+    opacity: 0;
+    will-change: transform, opacity;
+    /* Efek transisis halus menggunakan rumus cubic-bezier premium */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+
+/* VARIASI TITIK KOORDINAT AWAL ELEMEN (BEFORE SCROLL TRIPPED) */
+
+/* Meluncur dari Bawah Ke Atas */
+[data-my-aos="fade-up"] {
+    transform: translateY(40px);
+}
+
+/* Meluncur dari Atas Ke Bawah */
+[data-my-aos="fade-down"] {
+    transform: translateY(-40px);
+}
+
+/* Meluncur dari Kanan Ke Kiri */
+[data-my-aos="fade-left"] {
+    transform: translateX(40px);
+}
+
+/* Meluncur dari Kiri Ke Kanan */
+[data-my-aos="fade-right"] {
+    transform: translateX(-40px);
+}
+
+/* EKSEKUSI PENGEMBALIAN POSISI NORMAL (ANIMATE LOCK) */
+[data-my-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0, 0); /* Mengembalikan sumbu X dan Y murni ke 0 secara serentak */
+}

@@ -1,18 +1,10 @@
 @media screen and (max-width:425px){
-
-    /* ==========================================================================
-       REVISI KUNCI 1: SINKRONISASI TINGGI GRID INDUK BODY
-       ========================================================================== */
     body{
         overflow-x: hidden;
-        /* FUNGSI KUNCI MUTLAK: Mengubah jatah baris grid desktop (64px) menjadi 60px.
-           Ini menutup ruang hampa 4px secara instan sehingga gap putih lenyap permanen! */
         grid-template-rows: 60px 1fr; 
     }
 
-    /* =========================
-       NAVBAR
-       ========================= */
+    /* NAVBAR */
     header{
         height: 60px;
         background-color: var(--warna-primer);
@@ -29,9 +21,9 @@
         background-color: var(--warna-primer);
     }
 
-    .menu{
+    /* .menu{
         display: none;
-    }
+    } */
 
     .nav-left{
         display: flex;
@@ -75,9 +67,6 @@
     }
 
     /* MAIN */
-    /* ==========================================================================
-       MAIN AREA ADJUSTMENT (OPTIMASI LAYOUT MOBILE SCREEN 425PX)
-       ========================================================================== */
     main {
         grid-area: main;
         height: 100%;
@@ -90,9 +79,6 @@
         flex-direction: column;
     }
 
-    /* ----------------------------------------------------------------------
-       STYLE 1: HERO BANNER (PENYUSUTAN MAKRO SMARTPHONE)
-       ---------------------------------------------------------------------- */
     .contact-hero {
         width: 100%;
         height: 140px; /* Menyusutkan tinggi hero banner agar pas di layar kecil ponsel */
@@ -114,9 +100,6 @@
         letter-spacing: 0.5px;
     }
 
-    /* ----------------------------------------------------------------------
-       STYLE 2: BODY LAYOUT (TRANSFORMASI TOTAL MENJADI 1 KOLOM VERTIKAL)
-       ---------------------------------------------------------------------- */
     .contact-body {
         width: 100%;
         max-width: 100%;
@@ -138,17 +121,12 @@
         letter-spacing: -0.3px;
     }
 
-    /* FUNGSI KUNCI 1: Merombak sistem Grid menyamping menjadi Flexbox susun ke bawah 
-       agar formulir dan peta tidak terjepit gepeng horizontal */
     .contact-body .contact-grid {
         display: flex;
         flex-direction: column;
         row-gap: 2.5rem; /* Memberikan spasi vertikal yang lega antara form dan kartu peta */
     }
 
-    /* ----------------------------------------------------------------------
-       COMPONENTS A: FORMULIR INPUT MAHASISWA UNSOED (MOBILE SCALING)
-       ---------------------------------------------------------------------- */
     .contact-form {
         display: flex;
         flex-direction: column;
@@ -185,7 +163,7 @@
     }
 
     .contact-form .btn-submit {
-        width: 100%; /* FUNGSI KUNCI 2: Mengubah tombol submit menjadi full-width agar mudah ditekan jempol */
+        width: 100%; /* Mengubah tombol submit menjadi full-width agar mudah ditekan jempol */
         height: 38px;
         font-size: 0.9rem;
         font-weight: 600;
@@ -196,9 +174,6 @@
         cursor: pointer;
     }
 
-    /* ----------------------------------------------------------------------
-       COMPONENTS B: KARTU PETA GOOGLE MAPS (MOBILE DESIGN COMPACT)
-       ---------------------------------------------------------------------- */
     .map-card {
         width: 100%;
         background-color: var(--warna-bg);
@@ -211,10 +186,9 @@
         box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.06);
     }
 
-    /* Pembungkus Lensa Gambar Peta Mobile */
     .map-card .map-image-wrapper {
         width: 100%;
-        height: 200px; /* FUNGSI KUNCI 3: Mengunci tinggi denah lokasi murni 200px agar tidak melar raksasa */
+        height: 200px; /* Mengunci tinggi denah lokasi murni 200px agar tidak melar raksasa */
         overflow: hidden;
         flex-shrink: 0;
     }
@@ -228,8 +202,6 @@
 
     /* Boks Detail Informasi Internal Peta Mobile */
     .map-card .map-info-box {
-        /* FUNGSI KUNCI 4: Memberikan padding bawah 1.5rem untuk menjamin ruang bernapas 
-           tombol Google Maps dari lengkungan sudut border dasar bawah kartu */
         padding: 1.2rem 1.2rem 1.5rem 1.2rem;
         display: flex;
         flex-direction: column;
@@ -265,9 +237,7 @@
         margin-top: auto; /* Pengunci linear di lantai terdalam boks */
     }
     
-    /* =========================
-       FOOTER
-       ========================= */
+    /* FOOTER */
     footer .footer-content{
         flex-direction: column;
         gap: 1.5rem;

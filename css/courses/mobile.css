@@ -1,18 +1,12 @@
 @media screen and (max-width:425px){
-
-    /* ==========================================================================
-       REVISI KUNCI 1: SINKRONISASI TINGGI GRID INDUK BODY
-       ========================================================================== */
     body{
         overflow-x: hidden;
-        /* FUNGSI KUNCI MUTLAK: Mengubah jatah baris grid desktop (64px) menjadi 60px.
+        /*  Mengubah jatah baris grid desktop (64px) menjadi 60px.
            Ini menutup ruang hampa 4px secara instan sehingga gap putih lenyap permanen! */
         grid-template-rows: 60px 1fr; 
     }
 
-    /* =========================
-       NAVBAR
-       ========================= */
+    /* NAVBAR */
     header{
         height: 60px;
         background-color: var(--warna-primer);
@@ -29,9 +23,9 @@
         background-color: var(--warna-primer);
     }
 
-    .menu{
+    /* .menu{
         display: none;
-    }
+    } */
 
     .nav-left{
         display: flex;
@@ -74,11 +68,73 @@
         padding: 0;
     }
 
-    /* ISIKAN MAIN DISINI */
+    /* ===== MAIN ===== */
+    .container-3,
+    .container-4{
+        padding: 1rem;
+    }
 
-    /* =========================
-       FOOTER
-       ========================= */
+    .container-3 .title h2,
+    .container-4 .title h2{
+        font-size: 1.3rem;
+    }
+
+    .container-3 .title .learn-more p,
+    .container-4 .title .learn-more p{
+        font-size: .65rem;
+    }
+
+    .container-3 .title .learn-more a,
+    .container-4 .title .learn-more a{
+        font-size: .65rem;
+    }
+
+    /* KELAS UMUM */
+    .container-3 .course{
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .container-3 .course .course-recomend{
+        grid-column: auto;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .container-3 .course .course-recomend img{
+        width: 100%;
+        height: 160px;
+        border-radius: 14px 14px 0 0;
+    }
+
+    .container-3 .course .course-recomend .course-detail{
+        width: 100%;
+        padding: .8rem;
+    }
+
+    .container-3 .course .card-course:nth-child(3),
+    .container-3 .course .card-course:nth-child(4),
+    .container-3 .course .card-course:nth-child(5){
+        display: none;
+    }
+
+    .container-3 .course .course-populer{
+        grid-column: auto;
+        grid-row: auto;
+        min-height: auto;
+        padding: .8rem;
+    }
+
+    /* KELAS KHUSUS */
+    .container-4{
+        grid-template-columns: 1fr;
+    }
+
+    .container-4 .title{
+        grid-column: auto;
+    }
+
+    /* FOOTER */
     footer .footer-content{
         flex-direction: column;
         gap: 1.5rem;

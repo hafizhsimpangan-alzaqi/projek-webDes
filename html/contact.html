@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
-    <link rel="stylesheet" href="../css/contact/desktop.css">
-    <link rel="stylesheet" href="../css/contact/tablet.css">
-    <link rel="stylesheet" href="../css/contact/mobile.css">
+    <link rel="stylesheet" href="/css/contact/desktop.css">
+    <link rel="stylesheet" href="/css/contact/tablet.css">
+    <link rel="stylesheet" href="/css/contact/mobile.css">
+    <link rel="stylesheet" href="/css/animasi/my-aos.css">
+    <link rel="stylesheet" href="/css/animasi/nav-components.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
@@ -16,12 +17,12 @@
     <header>
         <nav>
             <div class="nav-left">
-                <i class="ri-menu-line"></i>
+                <i class="ri-menu-line" id="menuToggle"></i>
                 <div class="img">
-                    <img src="../assets/Logo.svg" alt="">
+                    <img src="/assets/Logo.svg" alt="">
                 </div>
             </div>
-            <div class="menu">
+            <div class="menu" id="mobileMenu">
                 <ul>
                     <li>
                         <a href="#" onclick="goToHome()">
@@ -47,7 +48,14 @@
             </div>
             <div class="icon">
                 <i class="ri-notification-fill"></i>
-                <img src="../assets/profil.jpg" alt="">
+                <img src="/assets/profil.jpg" alt="" id="profileTrigger">
+
+                <div class="card-login" id="profileDropdown">
+                    <a href="#" onclick="goToLogin()">
+                        <i class="ri-login-box-line"></i>
+                        <p>Login</p>
+                    </a>
+                </div>
             </div>
         </nav>
     </header>
@@ -55,18 +63,18 @@
         <article class="contact-page-wrapper">
 
             <section class="contact-hero">
-                <h1>Contact Us</h1>
+                <h1 data-my-aos="fade-up" data-my-aos-duration="2000">Contact Us</h1>
             </section>
 
             <section class="contact-body">
 
                 <div class="contact-heading">
-                    <h2>Let's Start a Conversation</h2>
+                    <h2 data-my-aos="fade-down" data-my-aos-duration="2000">Let's Start a Conversation</h2>
                 </div>
 
                 <div class="contact-grid">
 
-                    <form class="contact-form" onsubmit="event.preventDefault();">
+                    <form class="contact-form" onsubmit="event.preventDefault();" data-my-aos="fade-right" data-my-aos-duration="2000">
                         <div class="form-group">
                             <label for="nama">Nama Lengkap:</label>
                             <input type="text" id="nama" placeholder="example123" required>
@@ -95,9 +103,9 @@
                         <button type="submit" class="btn-submit">Enter</button>
                     </form>
 
-                    <div class="map-card">
+                    <div class="map-card" data-my-aos="fade-left" data-my-aos-duration="2000">
                         <div class="map-image-wrapper">
-                            <img src="../assets/gmap.png" alt="InfoLearn Location Map">
+                            <img src="/assets/gmap.png" alt="InfoLearn Location Map">
                         </div>
                         <div class="map-info-box">
                             <h3>Lorem ipsum dolor amet</h3>
@@ -117,9 +125,9 @@
 
             <div class="footer-content">
 
-                <div class="brand-side">
+                <div class="brand-side" data-my-aos="fade-right" data-my-aos-duration="2000">
                     <div class="footer-logo">
-                        <img src="../assets/Logo.svg" alt="Logo InfoLearn">
+                        <img src="/assets/Logo.svg" alt="Logo InfoLearn">
                     </div>
                     <h3>Landing Page</h3>
                     <ul>
@@ -129,7 +137,7 @@
                     </ul>
                 </div>
 
-                <div class="social-side">
+                <div class="social-side" data-my-aos="fade-left" data-my-aos-duration="2000">
                     <h3>Media Sosial</h3>
                     <ul>
                         <li><a href="">Instagram</a></li>
@@ -146,7 +154,7 @@
 
         </footer>
     </main>
-    <script src="../js/main.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
