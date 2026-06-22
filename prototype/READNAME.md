@@ -7,6 +7,8 @@ NAMA ANGGOTA KELOMPOK
 
 Tema Website berupa Edukasi yaitu platfrom e-learning
 
+Ket. Pastikan sudah terinstall mysql di device baik melalui docker ataupun xampp dan laragon
+
 Cara menjalankan Website
 1. impor elearn_backup.sql yang berada di direktori backup/ ke phpmysql atau mysql dengan username root dan password P@ssw0rd
 2. install node js https://nodejs.org/en/download
