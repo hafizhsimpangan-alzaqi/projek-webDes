@@ -1,4 +1,5 @@
 // js/main.js
+
 const sidebar = document.getElementById("sidebar")
 function toggleSidebar() {
     sidebar.classList.toggle('show-toggle')
@@ -12,7 +13,7 @@ function goToAbout() {
     window.location.href = "/about"
 }
 function goToCourse() {
-    window.location.href = "/course"
+    window.location.href = "/courses-page"
 }
 function goToContact() {
     window.location.href = "/contact"
@@ -23,21 +24,6 @@ function goToLogin() {
 function goToDashboard(){
     window.location.href = "/dashboard"
 }
-
-
-/* POPUP LOGIN */
-// const openBtn = document.getElementById("openModal")
-// const closeBtn = document.getElementById("closeModal")
-// const modal = document.getElementById("modal")
-
-// openBtn.addEventListener("click", () =>{
-//     modal.classList.add("open")
-// })
-
-// closeBtn.addEventListener("click", () =>{
-//     modal.classList.remove("open")
-// })
-
 
 document.addEventListener("DOMContentLoaded", () => {
 

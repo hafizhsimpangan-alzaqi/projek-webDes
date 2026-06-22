@@ -11,34 +11,38 @@
 <body>
     <main>
         <div class="card">
-            
+
             <div class="img">
                 <img src="/assets/Logo.svg" alt="InfoLearn Logo">
             </div>
-            
-            <form action="/login" method="post">
-                
+
+            <form id="loginForm">
+
                 <fieldset class="fieldset">
                     <legend class="fieldset-legend">Email:</legend>
-                    <input type="email" name="email" class="input" placeholder="example@gmail.com" required />
+                    <input type="email" name="email" class="input" placeholder="example@gmail.com" type="email"
+                        id="email" placeholder="Email" required />
                 </fieldset>
-                
+
                 <fieldset class="fieldset">
                     <legend class="fieldset-legend">Password:</legend>
-                    <input type="password" name="password" class="input" placeholder="example123" required />
+                    <input type="password" name="password" class="input" placeholder="example123" type="password"
+                        id="password" placeholder="Password" required />
                 </fieldset>
-                
-                <button type="submit" class="btn btn-primary" id="openModal">login</button>
-                
+
+                <button type="submit" class="btn btn-primary">login</button>
+
             </form>
+            <p id="errorMessage"></p>
         </div>
     </main>
-    <div class="modal" id="modal">
+    <!-- <div class="modal" id="modal">
         <div class="card-modal">
             <button id="closeModal">Close</button>
         </div>
-    </div>
+    </div> -->
     <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

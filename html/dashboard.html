@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="aktif" >
+                    <a href="" class="aktif">
                         <i class="ri-dashboard-fill"></i>
                         <p>Dashboard</p>
                     </a>
@@ -53,12 +53,21 @@
                         <p>Edit Profile</p>
                     </a>
                 </li>
+                <li>
+                    <a href="#" id="logoutBtn">
+                        <i class="ri-logout-box-r-line"></i>
+                        <p>Logout</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </aside>
     <main>
         <article class="card-heading">
-            <h1>Selamat Datang Kembali, Aldhinano</h1>
+            <h1>
+                Selamat Datang Kembali,
+                <span id="welcomeName"></span>
+            </h1>
             <p>Kamu Sekarang Sedang Menempuh Semester 2</p>
         </article>
         <article class="container-1">
@@ -67,10 +76,18 @@
                 <div class="identity">
                     <img src="/assets/profil.jpg" alt="" srcset="">
                     <div class="identity-detail">
-                        <h3>Hi, Nama Mahasiswa</h3>
+                        <h3 id="profileName">
+                            Hi, Nama User
+                        </h3>
+
                         <div class="keterangan">
-                            <p>H1D0251XX</p>
-                            <p>INFORMATIKA</p>
+                            <p id="identityNumber">
+                                Identity Number
+                            </p>
+
+                            <p id="department">
+                                Department
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -288,7 +305,12 @@
         </article>
     </main>
     <footer></footer>
+    <p id="email"></p>
+    <p id="role"></p>
     <script src="/js/main.js"></script>
+    <script src="/js/authGuard.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>
